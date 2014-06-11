@@ -1,0 +1,323 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9B0620FC1947D9FD00954A3E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0620FB1947D9FD00954A3E /* Foundation.framework */; };
+		9B0620FE1947D9FD00954A3E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0620FD1947D9FD00954A3E /* CoreGraphics.framework */; };
+		9B0621001947D9FD00954A3E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0620FF1947D9FD00954A3E /* UIKit.framework */; };
+		9B0621061947D9FD00954A3E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9B0621041947D9FD00954A3E /* InfoPlist.strings */; };
+		9B0621081947D9FD00954A3E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B0621071947D9FD00954A3E /* main.m */; };
+		9B0621141947D9FD00954A3E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B0621131947D9FD00954A3E /* Images.xcassets */; };
+		9B30C2C11947DA38005B3530 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B30C2C01947DA38005B3530 /* AppDelegate.m */; };
+		9B30C2C81947DAFC005B3530 /* SFMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B30C2C71947DAFC005B3530 /* SFMainViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9B0620F81947D9FD00954A3E /* spark-friends-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "spark-friends-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B0620FB1947D9FD00954A3E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9B0620FD1947D9FD00954A3E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9B0620FF1947D9FD00954A3E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9B0621031947D9FD00954A3E /* spark-friends-ios-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "spark-friends-ios-Info.plist"; sourceTree = "<group>"; };
+		9B0621051947D9FD00954A3E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9B0621071947D9FD00954A3E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9B0621091947D9FD00954A3E /* spark-friends-ios-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "spark-friends-ios-Prefix.pch"; sourceTree = "<group>"; };
+		9B0621131947D9FD00954A3E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9B06211A1947D9FD00954A3E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		9B30C2BF1947DA38005B3530 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9B30C2C01947DA38005B3530 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9B30C2C61947DAFC005B3530 /* SFMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFMainViewController.h; sourceTree = "<group>"; };
+		9B30C2C71947DAFC005B3530 /* SFMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFMainViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9B0620F51947D9FD00954A3E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B0620FE1947D9FD00954A3E /* CoreGraphics.framework in Frameworks */,
+				9B0621001947D9FD00954A3E /* UIKit.framework in Frameworks */,
+				9B0620FC1947D9FD00954A3E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9B0620EF1947D9FD00954A3E = {
+			isa = PBXGroup;
+			children = (
+				9B0621011947D9FD00954A3E /* spark-friends-ios */,
+				9B0620FA1947D9FD00954A3E /* Frameworks */,
+				9B0620F91947D9FD00954A3E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9B0620F91947D9FD00954A3E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9B0620F81947D9FD00954A3E /* spark-friends-ios.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9B0620FA1947D9FD00954A3E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9B0620FB1947D9FD00954A3E /* Foundation.framework */,
+				9B0620FD1947D9FD00954A3E /* CoreGraphics.framework */,
+				9B0620FF1947D9FD00954A3E /* UIKit.framework */,
+				9B06211A1947D9FD00954A3E /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9B0621011947D9FD00954A3E /* spark-friends-ios */ = {
+			isa = PBXGroup;
+			children = (
+				9B30C2C51947DAFC005B3530 /* Controllers */,
+				9B30C2BE1947DA38005B3530 /* Delegate */,
+				9B0621131947D9FD00954A3E /* Images.xcassets */,
+				9B0621021947D9FD00954A3E /* Supporting Files */,
+			);
+			path = "spark-friends-ios";
+			sourceTree = "<group>";
+		};
+		9B0621021947D9FD00954A3E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9B0621031947D9FD00954A3E /* spark-friends-ios-Info.plist */,
+				9B0621041947D9FD00954A3E /* InfoPlist.strings */,
+				9B0621071947D9FD00954A3E /* main.m */,
+				9B0621091947D9FD00954A3E /* spark-friends-ios-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9B30C2BE1947DA38005B3530 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				9B30C2BF1947DA38005B3530 /* AppDelegate.h */,
+				9B30C2C01947DA38005B3530 /* AppDelegate.m */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		9B30C2C51947DAFC005B3530 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9B30C2C61947DAFC005B3530 /* SFMainViewController.h */,
+				9B30C2C71947DAFC005B3530 /* SFMainViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9B0620F71947D9FD00954A3E /* spark-friends-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9B06212A1947D9FD00954A3E /* Build configuration list for PBXNativeTarget "spark-friends-ios" */;
+			buildPhases = (
+				9B0620F41947D9FD00954A3E /* Sources */,
+				9B0620F51947D9FD00954A3E /* Frameworks */,
+				9B0620F61947D9FD00954A3E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "spark-friends-ios";
+			productName = "spark-friends-ios";
+			productReference = 9B0620F81947D9FD00954A3E /* spark-friends-ios.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9B0620F01947D9FD00954A3E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Jawbone;
+			};
+			buildConfigurationList = 9B0620F31947D9FD00954A3E /* Build configuration list for PBXProject "spark-friends-ios" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9B0620EF1947D9FD00954A3E;
+			productRefGroup = 9B0620F91947D9FD00954A3E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9B0620F71947D9FD00954A3E /* spark-friends-ios */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9B0620F61947D9FD00954A3E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B0621141947D9FD00954A3E /* Images.xcassets in Resources */,
+				9B0621061947D9FD00954A3E /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9B0620F41947D9FD00954A3E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B0621081947D9FD00954A3E /* main.m in Sources */,
+				9B30C2C81947DAFC005B3530 /* SFMainViewController.m in Sources */,
+				9B30C2C11947DA38005B3530 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9B0621041947D9FD00954A3E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9B0621051947D9FD00954A3E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9B0621281947D9FD00954A3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9B0621291947D9FD00954A3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9B06212B1947D9FD00954A3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "spark-friends-ios/spark-friends-ios-Prefix.pch";
+				INFOPLIST_FILE = "spark-friends-ios/spark-friends-ios-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		9B06212C1947D9FD00954A3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "spark-friends-ios/spark-friends-ios-Prefix.pch";
+				INFOPLIST_FILE = "spark-friends-ios/spark-friends-ios-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9B0620F31947D9FD00954A3E /* Build configuration list for PBXProject "spark-friends-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B0621281947D9FD00954A3E /* Debug */,
+				9B0621291947D9FD00954A3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9B06212A1947D9FD00954A3E /* Build configuration list for PBXNativeTarget "spark-friends-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B06212B1947D9FD00954A3E /* Debug */,
+				9B06212C1947D9FD00954A3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9B0620F01947D9FD00954A3E /* Project object */;
+}
