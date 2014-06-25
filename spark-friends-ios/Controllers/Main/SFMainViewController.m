@@ -11,6 +11,17 @@
 // Views
 #import "SFUserTableViewCell.h"
 
+// Model
+#import "SFDataModel.h"
+#import "SFUser+Additions.h"
+
+// Enums
+typedef NS_ENUM(NSInteger, SFMainViewControllerSection){
+    SFMainViewControllerSectionCurrentUser,
+	SFMainViewControllerSectionFriends,
+    SFMainViewControllerSectionCount
+};
+
 // Strings
 NSString * const kSFMainViewControllerCellIdentifier = @"kSFMainViewControllerCellIdentifier";
 
@@ -33,15 +44,54 @@ NSString * const kSFMainViewControllerCellIdentifier = @"kSFMainViewControllerCe
 
 #pragma mark - UITableViewDataSource
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return SFMainViewControllerSectionCount;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if (section == SFMainViewControllerSectionCurrentUser)
+    {
+        return 1;
+    }
+    else if (section == SFMainViewControllerSectionFriends)
+    {
+        return [[SFDataModel sharedInstance].users count] - 1;
+    }
     return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     SFUserTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kSFMainViewControllerCellIdentifier forIndexPath:indexPath];
+    SFUser *user;
+    
+    if (indexPath.section == SFMainViewControllerSectionCurrentUser)
+    {
+        user = [[SFDataModel sharedInstance].users firstObject];
+    }
+    else if (indexPath.section == SFMainViewControllerSectionFriends)
+    {
+        user = [[SFDataModel sharedInstance].users objectAtIndex:indexPath.row + 1];
+    }
+    
+    cell.textLabel.text = [user fullName];
+    
     return cell;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if (section == SFMainViewControllerSectionCurrentUser)
+    {
+        return kSFStringLabelCurrentUser;
+    }
+    else if (section == SFMainViewControllerSectionFriends)
+    {
+        return kSFStringLabelFriends;
+    }
+    return nil;
 }
 
 @end

@@ -11,3 +11,5 @@
 #pragma mark - Labels
 
 #define kSFStringLabelProfile localize(@"label.profile", @"Profile")
+#define kSFStringLabelCurrentUser localize(@"label.current.user", @"Current User")
+#define kSFStringLabelFriends localize(@"label.friends", @"Friends")

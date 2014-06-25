@@ -20,6 +20,7 @@
 		9BB02B8E195A643F0072E213 /* SFUserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB02B8D195A643F0072E213 /* SFUserTableViewCell.m */; };
 		9BB02B93195A64820072E213 /* SFMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB02B92195A64820072E213 /* SFMainViewController.m */; };
 		9BB02B9A195A64A90072E213 /* SFBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB02B99195A64A90072E213 /* SFBaseNavigationController.m */; };
+		9BB02BAD195A8A9D0072E213 /* SFUser+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB02BAC195A8A9D0072E213 /* SFUser+Additions.m */; };
 		D3D72538695046FF8B71BA0A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D991FF4CA6A4C60B7BFC1AD /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,8 @@
 		9BB02B9D195A6F250072E213 /* SFConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFConstants.h; sourceTree = "<group>"; };
 		9BB02B9E195A6F320072E213 /* SFColorConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFColorConstants.h; sourceTree = "<group>"; };
 		9BB02B9F195A6F3D0072E213 /* SFStringConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFStringConstants.h; sourceTree = "<group>"; };
+		9BB02BAB195A8A9D0072E213 /* SFUser+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SFUser+Additions.h"; sourceTree = "<group>"; };
+		9BB02BAC195A8A9D0072E213 /* SFUser+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SFUser+Additions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +140,7 @@
 		9B4C70D01947DC67004CD3AE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9BB02BAA195A8A9D0072E213 /* Additions */,
 				9B4C70D11947DC67004CD3AE /* SFDataModel.h */,
 				9B4C70D21947DC67004CD3AE /* SFDataModel.m */,
 				9B4C70D41947DC79004CD3AE /* SFUser.h */,
@@ -199,6 +203,15 @@
 				9BB02B9F195A6F3D0072E213 /* SFStringConstants.h */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		9BB02BAA195A8A9D0072E213 /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				9BB02BAB195A8A9D0072E213 /* SFUser+Additions.h */,
+				9BB02BAC195A8A9D0072E213 /* SFUser+Additions.m */,
+			);
+			path = Additions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BB02BAD195A8A9D0072E213 /* SFUser+Additions.m in Sources */,
 				9B4C70D91947DC82004CD3AE /* SFStep.m in Sources */,
 				9B4C70D31947DC67004CD3AE /* SFDataModel.m in Sources */,
 				9B0621081947D9FD00954A3E /* main.m in Sources */,
