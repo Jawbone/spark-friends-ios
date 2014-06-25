@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+// Models
+#import "SFUser.h"
+
 @interface SFDataModel : NSObject
+
+@property (nonatomic, readonly) SFUser *user; // current user
+@property (nonatomic, readonly) NSArray *friends; // current user 'friends'
 
 @end

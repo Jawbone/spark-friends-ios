@@ -10,6 +10,9 @@
 
 @interface SFUser : NSObject
 
-
+@property (nonatomic, strong) NSString *firstName;
+@property (nonatomic, strong) NSString *lastName;
+@property (nonatomic, strong) NSDate *createDate;
+@property (nonatomic, strong) NSArray *steps;
 
 @end
