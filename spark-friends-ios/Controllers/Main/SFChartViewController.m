@@ -22,11 +22,11 @@ CGFloat static const kSFChartViewContainerFooterHeight = 30.0f;
 
 @interface SFChartViewContainer : UIView
 
-@property (nonatomic, strong) JBLineChartView *lineChartView;
+@property (nonatomic, strong) SFLineChartView *lineChartView;
 
 @end
 
-@interface SFChartViewController () <JBLineChartViewDataSource, SFLineChartViewDelegate>
+@interface SFChartViewController () <JBLineChartViewDelegate, SFLineChartViewDataSource>
 
 @property (nonatomic, strong) SFUser *user;
 @property (nonatomic, strong) SFChartViewContainer *chartContainer;
@@ -81,7 +81,7 @@ CGFloat static const kSFChartViewContainerFooterHeight = 30.0f;
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
-#pragma mark - JBLineChartViewDataSource
+#pragma mark - SfLineChartViewDataSource
 
 - (NSUInteger)numberOfLinesInLineChartView:(JBLineChartView *)lineChartView;
 {
@@ -98,7 +98,17 @@ CGFloat static const kSFChartViewContainerFooterHeight = 30.0f;
     return kSFColorChartLineColor;
 }
 
-#pragma mark - SFLineChartViewDelegate
+- (NSUInteger)minimumAverageInLineChartView:(JBLineChartView *)lineChartView
+{
+    return 2000;
+}
+
+- (NSUInteger)maximumAverageInLineChartView:(JBLineChartView *)lineChartView
+{
+    return 8000;
+}
+
+#pragma mark - JBLineChartViewDelegate
 
 - (CGFloat)lineChartView:(JBLineChartView *)lineChartView verticalValueForHorizontalIndex:(NSUInteger)horizontalIndex atLineIndex:(NSUInteger)lineIndex
 {
@@ -124,7 +134,7 @@ CGFloat static const kSFChartViewContainerFooterHeight = 30.0f;
     {
         self.backgroundColor = kSFColorBaseBackgroundColor;
         
-        _lineChartView = [[JBLineChartView alloc] initWithFrame:self.bounds];
+        _lineChartView = [[SFLineChartView alloc] initWithFrame:self.bounds];
         _lineChartView.backgroundColor = kSFColorBaseBackgroundColor;
         _lineChartView.showsLineSelection = NO;
         _lineChartView.showsVerticalSelection = NO;

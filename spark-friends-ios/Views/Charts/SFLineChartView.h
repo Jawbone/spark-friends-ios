@@ -10,12 +10,17 @@
 
 @class SFLineChartView;
 
-@protocol SFLineChartViewDelegate <JBLineChartViewDelegate>
+@protocol SFLineChartViewDataSource <JBLineChartViewDataSource>
+
+@optional
+
+- (NSUInteger)minimumAverageInLineChartView:(JBLineChartView *)lineChartView;
+- (NSUInteger)maximumAverageInLineChartView:(JBLineChartView *)lineChartView;
 
 @end
 
 @interface SFLineChartView : JBLineChartView
 
-@property (nonatomic, weak) id<SFLineChartViewDelegate> delegate;
+@property (nonatomic, weak) id<SFLineChartViewDataSource> dataSource;
 
 @end
