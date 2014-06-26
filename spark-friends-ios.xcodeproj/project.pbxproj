@@ -22,6 +22,7 @@
 		9BB02B9A195A64A90072E213 /* SFBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB02B99195A64A90072E213 /* SFBaseNavigationController.m */; };
 		9BB02BAD195A8A9D0072E213 /* SFUser+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB02BAC195A8A9D0072E213 /* SFUser+Additions.m */; };
 		9BD9A41A195C9105009E1F14 /* SFChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9A419195C9105009E1F14 /* SFChartViewController.m */; };
+		9BD9A421195C95FC009E1F14 /* SFLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9A420195C95FC009E1F14 /* SFLineChartView.m */; };
 		D3D72538695046FF8B71BA0A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D991FF4CA6A4C60B7BFC1AD /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,8 @@
 		9BB02BAC195A8A9D0072E213 /* SFUser+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SFUser+Additions.m"; sourceTree = "<group>"; };
 		9BD9A418195C9105009E1F14 /* SFChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFChartViewController.h; sourceTree = "<group>"; };
 		9BD9A419195C9105009E1F14 /* SFChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFChartViewController.m; sourceTree = "<group>"; };
+		9BD9A41F195C95FC009E1F14 /* SFLineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFLineChartView.h; sourceTree = "<group>"; };
+		9BD9A420195C95FC009E1F14 /* SFLineChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFLineChartView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +160,7 @@
 		9BB02B8A195A643F0072E213 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9BD9A41E195C95FC009E1F14 /* Charts */,
 				9BB02B8B195A643F0072E213 /* Cells */,
 			);
 			path = Views;
@@ -217,6 +221,15 @@
 				9BB02BAC195A8A9D0072E213 /* SFUser+Additions.m */,
 			);
 			path = Additions;
+			sourceTree = "<group>";
+		};
+		9BD9A41E195C95FC009E1F14 /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				9BD9A41F195C95FC009E1F14 /* SFLineChartView.h */,
+				9BD9A420195C95FC009E1F14 /* SFLineChartView.m */,
+			);
+			path = Charts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,6 +341,7 @@
 				9BB02B93195A64820072E213 /* SFMainViewController.m in Sources */,
 				9BB02B8E195A643F0072E213 /* SFUserTableViewCell.m in Sources */,
 				9BB02B9A195A64A90072E213 /* SFBaseNavigationController.m in Sources */,
+				9BD9A421195C95FC009E1F14 /* SFLineChartView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

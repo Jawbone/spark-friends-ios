@@ -11,5 +11,6 @@
 @interface SFUser (Additions)
 
 - (NSString *)fullName;
+- (NSArray *)friends;
 
 @end

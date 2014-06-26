@@ -62,7 +62,7 @@ NSString * const kSFMainViewControllerCellIdentifier = @"kSFMainViewControllerCe
     }
     else if (section == SFMainViewControllerSectionFriends)
     {
-        return [[SFDataModel sharedInstance].users count] - 1;
+        return [[[SFDataModel sharedInstance].currentUser friends] count];
     }
     return 0;
 }
@@ -70,15 +70,15 @@ NSString * const kSFMainViewControllerCellIdentifier = @"kSFMainViewControllerCe
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     SFUserTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kSFMainViewControllerCellIdentifier forIndexPath:indexPath];
-    SFUser *user;
     
+    SFUser *user;
     if (indexPath.section == SFMainViewControllerSectionCurrentUser)
     {
-        user = [[SFDataModel sharedInstance].users firstObject];
+        user = [SFDataModel sharedInstance].currentUser;
     }
     else if (indexPath.section == SFMainViewControllerSectionFriends)
     {
-        user = [[SFDataModel sharedInstance].users objectAtIndex:indexPath.row + 1];
+        user = [[[SFDataModel sharedInstance].currentUser friends] objectAtIndex:indexPath.row];
     }
     
     cell.textLabel.text = [user fullName];
@@ -105,14 +105,14 @@ NSString * const kSFMainViewControllerCellIdentifier = @"kSFMainViewControllerCe
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    SFUser *user = nil;
+    SFUser *user;
     if (indexPath.section == SFMainViewControllerSectionCurrentUser)
     {
-        user = [[SFDataModel sharedInstance].users firstObject];
+        user = [SFDataModel sharedInstance].currentUser;
     }
-    else
+    else if (indexPath.section == SFMainViewControllerSectionFriends)
     {
-        user = [[SFDataModel sharedInstance].users objectAtIndex:indexPath.row + 1];
+        user = [[[SFDataModel sharedInstance].currentUser friends] objectAtIndex:indexPath.row];
     }
     
     SFChartViewController *chartViewController = [[SFChartViewController alloc] initWithUser:user];

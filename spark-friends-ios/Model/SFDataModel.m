@@ -12,7 +12,7 @@
 #import "SFStep.h"
 
 // Numerics
-NSUInteger static const kSFDataModelDaysInYear = 365;
+NSUInteger static const kSFDataModelMonthsInYear = 12;
 NSUInteger static const kSFDataModelMaxUsers = 10;
 NSUInteger static const kSFDataModelMaxStep = 15000;
 NSUInteger static const kSFDataModelMinStep = 3000;
@@ -77,6 +77,11 @@ NSUInteger static const kSFDataModelTimeIntervalDay = 86400;
 
 #pragma mark - Getters
 
+- (SFUser *)currentUser
+{
+    return [self.users firstObject];
+}
+
 - (NSArray *)users
 {
     if (_users == nil)
@@ -89,7 +94,7 @@ NSUInteger static const kSFDataModelTimeIntervalDay = 86400;
             user.lastName = [self randomLastName];            
             NSMutableArray *mutableSteps = [NSMutableArray array];
             NSDate *baseDate = [NSDate date];
-            for (NSUInteger dayIndex=0; dayIndex<kSFDataModelDaysInYear; dayIndex++)
+            for (NSUInteger dayIndex=0; dayIndex<kSFDataModelMonthsInYear; dayIndex++)
             {
                 NSDate *createDate = [NSDate dateWithTimeIntervalSince1970:[baseDate timeIntervalSinceNow] - (kSFDataModelTimeIntervalDay * dayIndex)];
                 SFStep *step = [[SFStep alloc] initWithValue:[self randomStep] createDate:createDate];

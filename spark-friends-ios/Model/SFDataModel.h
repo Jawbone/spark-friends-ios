@@ -14,7 +14,6 @@
 @interface SFDataModel : NSObject
 
 + (SFDataModel *)sharedInstance;
-
-@property (nonatomic, readonly) NSArray *users;
+- (SFUser *)currentUser;
 
 @end
