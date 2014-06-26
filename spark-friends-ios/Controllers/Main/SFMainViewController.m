@@ -15,6 +15,10 @@
 #import "SFDataModel.h"
 #import "SFUser+Additions.h"
 
+// Controllers
+#import "SFBaseNavigationController.h"
+#import "SFChartViewController.h"
+
 // Enums
 typedef NS_ENUM(NSInteger, SFMainViewControllerSection){
     SFMainViewControllerSectionCurrentUser,
@@ -38,6 +42,7 @@ NSString * const kSFMainViewControllerCellIdentifier = @"kSFMainViewControllerCe
     [super loadView];
 
     self.title = kSFStringLabelProfile;
+    self.view.backgroundColor = kSFColorBaseBackgroundColor;
     
     [self.tableView registerClass:[SFUserTableViewCell class] forCellReuseIdentifier:kSFMainViewControllerCellIdentifier];
 }
@@ -92,6 +97,27 @@ NSString * const kSFMainViewControllerCellIdentifier = @"kSFMainViewControllerCe
         return kSFStringLabelFriends;
     }
     return nil;
+}
+
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    SFUser *user = nil;
+    if (indexPath.section == SFMainViewControllerSectionCurrentUser)
+    {
+        user = [[SFDataModel sharedInstance].users firstObject];
+    }
+    else
+    {
+        user = [[SFDataModel sharedInstance].users objectAtIndex:indexPath.row + 1];
+    }
+    
+    SFChartViewController *chartViewController = [[SFChartViewController alloc] initWithUser:user];
+    SFBaseNavigationController *navigationController = [[SFBaseNavigationController alloc] initWithRootViewController:chartViewController];
+    [self.navigationController presentViewController:navigationController animated:YES completion:nil];
 }
 
 @end
