@@ -11,3 +11,7 @@
 #pragma mark - Base
 
 #define kSFColorBaseBackgroundColor UIColorFromHex(0xf5f4f0)
+#define kSFColorChartLineColor UIColorFromHex(0x222222)
+#define kSFColorChartFooterSeparatorColor UIColorFromHex(0x222222)
+#define kSFColorChartFooterSideTextColor UIColorFromHex(0x222222)
+#define kSFColorChartFooterCenterTextColor UIColorFromHex(0x787878)

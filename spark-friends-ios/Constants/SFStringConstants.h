@@ -14,3 +14,5 @@
 #define kSFStringLabelCurrentUser localize(@"label.current.user", @"Current User")
 #define kSFStringLabelFriends localize(@"label.friends", @"Friends")
 #define kSFStringLabelClose localize(@"label.close", @"Close")
+#define kSFStringLabelJan localize(@"label.jan", @"Jan")
+#define kSFStringLabelDec localize(@"label.dec", @"Dec")

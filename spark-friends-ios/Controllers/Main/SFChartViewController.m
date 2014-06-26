@@ -14,9 +14,11 @@
 
 // Views
 #import "SFLineChartView.h"
+#import "SFChartFooterView.h"
 
 // Numerics
 NSUInteger static const kSFChartViewContainerPadding = 10;
+CGFloat static const kSFChartViewContainerFooterHeight = 30.0f;
 
 @interface SFChartViewContainer : UIView
 
@@ -62,6 +64,13 @@ NSUInteger static const kSFChartViewContainerPadding = 10;
     self.chartContainer.lineChartView.delegate = self;
     self.chartContainer.lineChartView.dataSource = self;
     
+    SFChartFooterView *footerView = [[SFChartFooterView alloc] initWithFrame:CGRectMake(self.view.bounds.origin.x, self.view.bounds.origin.y, self.view.bounds.size.width, kSFChartViewContainerFooterHeight)];
+    footerView.sectionCount = 2;
+    footerView.leftLabel.text = [kSFStringLabelJan uppercaseString];
+    footerView.rightLabel.text = [kSFStringLabelDec uppercaseString];
+    footerView.centerLabel.text = @"2013";
+    self.chartContainer.lineChartView.footerView = footerView;
+    
     [self.chartContainer.lineChartView reloadData];
 }
 
@@ -82,6 +91,11 @@ NSUInteger static const kSFChartViewContainerPadding = 10;
 - (NSUInteger)lineChartView:(JBLineChartView *)lineChartView numberOfVerticalValuesAtLineIndex:(NSUInteger)lineIndex
 {
     return [self.user.steps count];
+}
+
+- (UIColor *)lineChartView:(JBLineChartView *)lineChartView colorForLineAtLineIndex:(NSUInteger)lineIndex
+{
+    return kSFColorChartLineColor;
 }
 
 #pragma mark - SFLineChartViewDelegate
@@ -112,6 +126,9 @@ NSUInteger static const kSFChartViewContainerPadding = 10;
         
         _lineChartView = [[JBLineChartView alloc] initWithFrame:self.bounds];
         _lineChartView.backgroundColor = kSFColorBaseBackgroundColor;
+        _lineChartView.showsLineSelection = NO;
+        _lineChartView.showsVerticalSelection = NO;
+        
         [self addSubview:_lineChartView];
     }
     return self;

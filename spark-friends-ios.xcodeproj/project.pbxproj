@@ -23,6 +23,7 @@
 		9BB02BAD195A8A9D0072E213 /* SFUser+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB02BAC195A8A9D0072E213 /* SFUser+Additions.m */; };
 		9BD9A41A195C9105009E1F14 /* SFChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9A419195C9105009E1F14 /* SFChartViewController.m */; };
 		9BD9A421195C95FC009E1F14 /* SFLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9A420195C95FC009E1F14 /* SFLineChartView.m */; };
+		9BD9A42F195CA316009E1F14 /* SFChartFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9A42E195CA316009E1F14 /* SFChartFooterView.m */; };
 		D3D72538695046FF8B71BA0A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D991FF4CA6A4C60B7BFC1AD /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,8 @@
 		9BD9A419195C9105009E1F14 /* SFChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFChartViewController.m; sourceTree = "<group>"; };
 		9BD9A41F195C95FC009E1F14 /* SFLineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFLineChartView.h; sourceTree = "<group>"; };
 		9BD9A420195C95FC009E1F14 /* SFLineChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFLineChartView.m; sourceTree = "<group>"; };
+		9BD9A42D195CA316009E1F14 /* SFChartFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFChartFooterView.h; sourceTree = "<group>"; };
+		9BD9A42E195CA316009E1F14 /* SFChartFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFChartFooterView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +165,7 @@
 			children = (
 				9BD9A41E195C95FC009E1F14 /* Charts */,
 				9BB02B8B195A643F0072E213 /* Cells */,
+				9BD9A42C195CA316009E1F14 /* Footers */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -230,6 +234,15 @@
 				9BD9A420195C95FC009E1F14 /* SFLineChartView.m */,
 			);
 			path = Charts;
+			sourceTree = "<group>";
+		};
+		9BD9A42C195CA316009E1F14 /* Footers */ = {
+			isa = PBXGroup;
+			children = (
+				9BD9A42D195CA316009E1F14 /* SFChartFooterView.h */,
+				9BD9A42E195CA316009E1F14 /* SFChartFooterView.m */,
+			);
+			path = Footers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,6 +351,7 @@
 				9B0621081947D9FD00954A3E /* main.m in Sources */,
 				9B30C2C11947DA38005B3530 /* AppDelegate.m in Sources */,
 				9B4C70D61947DC79004CD3AE /* SFUser.m in Sources */,
+				9BD9A42F195CA316009E1F14 /* SFChartFooterView.m in Sources */,
 				9BB02B93195A64820072E213 /* SFMainViewController.m in Sources */,
 				9BB02B8E195A643F0072E213 /* SFUserTableViewCell.m in Sources */,
 				9BB02B9A195A64A90072E213 /* SFBaseNavigationController.m in Sources */,
