@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+#import "SFLineChartView.h"
+
 @interface SFUserTableViewCell : UITableViewCell
+
+@property (nonatomic, readonly) UIImageView *userImageView;
+@property (nonatomic, readonly) UILabel *nameLabel;
+@property (nonatomic, readonly) UILabel *dateLabel;
+@property (nonatomic, readonly) SFLineChartView *lineChartView;
 
 @end

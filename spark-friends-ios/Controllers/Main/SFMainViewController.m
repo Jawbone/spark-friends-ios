@@ -19,6 +19,9 @@
 #import "SFBaseNavigationController.h"
 #import "SFChartViewController.h"
 
+// Numerics
+CGFloat static const kSFMainViewControllerCellHeight = 100.0f;
+
 // Enums
 typedef NS_ENUM(NSInteger, SFMainViewControllerSection){
     SFMainViewControllerSectionCurrentUser,
@@ -29,7 +32,7 @@ typedef NS_ENUM(NSInteger, SFMainViewControllerSection){
 // Strings
 NSString * const kSFMainViewControllerCellIdentifier = @"kSFMainViewControllerCellIdentifier";
 
-@interface SFMainViewController ()
+@interface SFMainViewController () <SFLineChartViewDataSource, JBLineChartViewDelegate>
 
 @end
 
@@ -80,8 +83,9 @@ NSString * const kSFMainViewControllerCellIdentifier = @"kSFMainViewControllerCe
     {
         user = [[[SFDataModel sharedInstance].currentUser friends] objectAtIndex:indexPath.row];
     }
-    
     cell.textLabel.text = [user fullName];
+    cell.lineChartView.delegate = self;
+    cell.lineChartView.dataSource = self;
     
     return cell;
 }
@@ -118,6 +122,40 @@ NSString * const kSFMainViewControllerCellIdentifier = @"kSFMainViewControllerCe
     SFChartViewController *chartViewController = [[SFChartViewController alloc] initWithUser:user];
     SFBaseNavigationController *navigationController = [[SFBaseNavigationController alloc] initWithRootViewController:chartViewController];
     [self.navigationController presentViewController:navigationController animated:YES completion:nil];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return kSFMainViewControllerCellHeight;
+}
+
+#pragma mark - SFLineChartViewDataSource
+
+- (NSUInteger)numberOfLinesInLineChartView:(JBLineChartView *)lineChartView;
+{
+    return 1;
+}
+
+- (NSUInteger)lineChartView:(JBLineChartView *)lineChartView numberOfVerticalValuesAtLineIndex:(NSUInteger)lineIndex
+{
+    return 2;
+}
+
+- (UIColor *)lineChartView:(JBLineChartView *)lineChartView colorForLineAtLineIndex:(NSUInteger)lineIndex
+{
+    return [UIColor blueColor];
+}
+
+#pragma mark - JBLineChartViewDelegate
+
+- (CGFloat)lineChartView:(JBLineChartView *)lineChartView verticalValueForHorizontalIndex:(NSUInteger)horizontalIndex atLineIndex:(NSUInteger)lineIndex
+{
+    return horizontalIndex % 2 == 0 ? 10 : 50;
+}
+
+- (BOOL)lineChartView:(JBLineChartView *)lineChartView smoothLineAtLineIndex:(NSUInteger)lineIndex
+{
+    return YES;
 }
 
 @end

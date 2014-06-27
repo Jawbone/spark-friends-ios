@@ -17,7 +17,7 @@
 #import "SFChartFooterView.h"
 
 // Numerics
-NSUInteger static const kSFChartViewContainerPadding = 10;
+CGFloat static const kSFChartViewContainerPadding = 20.0f;
 CGFloat static const kSFChartViewContainerFooterHeight = 30.0f;
 CGFloat static const kSFChartViewContainerDotRadius = 10.0f;
 
@@ -85,7 +85,7 @@ CGFloat static const kSFChartViewContainerDotRadius = 10.0f;
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
-#pragma mark - SfLineChartViewDataSource
+#pragma mark - SFLineChartViewDataSource
 
 - (NSUInteger)numberOfLinesInLineChartView:(JBLineChartView *)lineChartView;
 {
@@ -116,7 +116,7 @@ CGFloat static const kSFChartViewContainerDotRadius = 10.0f;
 {
     if (horizontalIndex == [self.user.steps count] - 1)
     {
-        return kSFColorChartDotColor;
+        return [UIColor redColor];
     }
     return [UIColor clearColor];
 }
