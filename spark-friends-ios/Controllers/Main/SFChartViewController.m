@@ -63,12 +63,15 @@ CGFloat static const kSFChartViewContainerFooterHeight = 30.0f;
 
     self.chartContainer.lineChartView.delegate = self;
     self.chartContainer.lineChartView.dataSource = self;
+
+    self.chartContainer.lineChartView.maximumValue = [self.user maximumStepValue];
+    self.chartContainer.lineChartView.minimumValue = [self.user minimumStepValue];
     
     SFChartFooterView *footerView = [[SFChartFooterView alloc] initWithFrame:CGRectMake(self.view.bounds.origin.x, self.view.bounds.origin.y, self.view.bounds.size.width, kSFChartViewContainerFooterHeight)];
     footerView.sectionCount = 2;
     footerView.leftLabel.text = [kSFStringLabelJan uppercaseString];
     footerView.rightLabel.text = [kSFStringLabelDec uppercaseString];
-    footerView.centerLabel.text = @"2013";
+    footerView.centerLabel.text = kSFStringLabel2013;
     self.chartContainer.lineChartView.footerView = footerView;
     
     [self.chartContainer.lineChartView reloadData];
@@ -100,12 +103,12 @@ CGFloat static const kSFChartViewContainerFooterHeight = 30.0f;
 
 - (NSUInteger)minimumAverageInLineChartView:(JBLineChartView *)lineChartView
 {
-    return 2000;
+    return [self.user averageStepValue] + ceil([self.user averageStepValue] * 0.5);
 }
 
 - (NSUInteger)maximumAverageInLineChartView:(JBLineChartView *)lineChartView
 {
-    return 8000;
+    return [self.user averageStepValue] - ceil([self.user averageStepValue] * 0.5);
 }
 
 #pragma mark - JBLineChartViewDelegate

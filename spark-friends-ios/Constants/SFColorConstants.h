@@ -15,3 +15,4 @@
 #define kSFColorChartFooterSeparatorColor UIColorFromHex(0x222222)
 #define kSFColorChartFooterSideTextColor UIColorFromHex(0x222222)
 #define kSFColorChartFooterCenterTextColor UIColorFromHex(0x787878)
+#define kSFColorRangeViewBackgroundColor UIColorFromHex(0xf6c29a)

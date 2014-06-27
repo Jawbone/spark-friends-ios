@@ -30,7 +30,7 @@
     if (self)
     {
         _averageRangeView = [[UIView alloc] init];
-        _averageRangeView.backgroundColor = [UIColor redColor];
+        _averageRangeView.backgroundColor = kSFColorRangeViewBackgroundColor;
         [self addSubview:_averageRangeView];
     }
     return self;
@@ -47,17 +47,16 @@
     {
         minimumAverage = [self.dataSource minimumAverageInLineChartView:self];
     }
-    
+    CGFloat yOffsetBottom = (((CGFloat)minimumAverage) / self.maximumValue) * [self availableHeight];
+
     NSUInteger maximumAverage = 0;
     if ([self.dataSource respondsToSelector:@selector(maximumAverageInLineChartView:)])
     {
         maximumAverage = [self.dataSource maximumAverageInLineChartView:self];
     }
-    
-    
-    
-    
-    self.averageRangeView.frame = CGRectMake(0, 50, self.bounds.size.width, self.bounds.size.height - 100);
+    CGFloat yOffsetTop = (1 - (((CGFloat)maximumAverage) / self.maximumValue)) * [self availableHeight];
+
+    self.averageRangeView.frame = CGRectMake(0, yOffsetTop, self.bounds.size.width, self.bounds.size.height - yOffsetTop - yOffsetBottom);
 }
 
 #pragma mark - Data
