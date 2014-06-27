@@ -11,6 +11,7 @@
 @interface SFLineChartView ()
 
 @property (nonatomic, strong) UIView *averageRangeView;
+@property (nonatomic, strong) UILabel *lastValueLabel;
 
 @end
 
@@ -32,6 +33,9 @@
         _averageRangeView = [[UIView alloc] init];
         _averageRangeView.backgroundColor = kSFColorRangeViewBackgroundColor;
         [self addSubview:_averageRangeView];
+        
+        _lastValueLabel = [[UILabel alloc] init];
+        [self addSubview:_lastValueLabel];
     }
     return self;
 }

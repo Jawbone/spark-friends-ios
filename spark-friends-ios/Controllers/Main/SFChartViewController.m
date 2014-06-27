@@ -19,6 +19,7 @@
 // Numerics
 NSUInteger static const kSFChartViewContainerPadding = 10;
 CGFloat static const kSFChartViewContainerFooterHeight = 30.0f;
+CGFloat static const kSFChartViewContainerDotRadius = 10.0f;
 
 @interface SFChartViewContainer : UIView
 
@@ -109,6 +110,25 @@ CGFloat static const kSFChartViewContainerFooterHeight = 30.0f;
 - (NSUInteger)maximumAverageInLineChartView:(JBLineChartView *)lineChartView
 {
     return [self.user averageStepValue] - ceil([self.user averageStepValue] * 0.5);
+}
+
+- (UIColor *)lineChartView:(JBLineChartView *)lineChartView colorForDotAtHorizontalIndex:(NSUInteger)horizontalIndex atLineIndex:(NSUInteger)lineIndex
+{
+    if (horizontalIndex == [self.user.steps count] - 1)
+    {
+        return kSFColorChartDotColor;
+    }
+    return [UIColor clearColor];
+}
+
+- (CGFloat)lineChartView:(JBLineChartView *)lineChartView dotRadiusForLineAtLineIndex:(NSUInteger)lineIndex
+{
+    return kSFChartViewContainerDotRadius;
+}
+
+- (BOOL)lineChartView:(JBLineChartView *)lineChartView showsDotsForLineAtLineIndex:(NSUInteger)lineIndex
+{
+    return YES;
 }
 
 #pragma mark - JBLineChartViewDelegate
