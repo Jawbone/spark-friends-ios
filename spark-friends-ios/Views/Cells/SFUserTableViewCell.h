@@ -10,6 +10,9 @@
 
 #import "SFLineChartView.h"
 
+// Numerics
+extern CGFloat const kSFUserTableViewCellHeight;
+
 @interface SFUserTableViewCell : UITableViewCell
 
 @property (nonatomic, readonly) UIImageView *userImageView;

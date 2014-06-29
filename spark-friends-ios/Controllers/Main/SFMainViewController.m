@@ -19,9 +19,6 @@
 #import "SFBaseNavigationController.h"
 #import "SFChartViewController.h"
 
-// Numerics
-CGFloat static const kSFMainViewControllerCellHeight = 100.0f;
-
 // Enums
 typedef NS_ENUM(NSInteger, SFMainViewControllerSection){
     SFMainViewControllerSectionCurrentUser,
@@ -86,7 +83,7 @@ NSString * const kSFMainViewControllerCellIdentifier = @"kSFMainViewControllerCe
     cell.textLabel.text = [user fullName];
     cell.lineChartView.delegate = self;
     cell.lineChartView.dataSource = self;
-    
+    [cell.lineChartView reloadData];
     return cell;
 }
 
@@ -126,7 +123,7 @@ NSString * const kSFMainViewControllerCellIdentifier = @"kSFMainViewControllerCe
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return kSFMainViewControllerCellHeight;
+    return kSFUserTableViewCellHeight;
 }
 
 #pragma mark - SFLineChartViewDataSource
