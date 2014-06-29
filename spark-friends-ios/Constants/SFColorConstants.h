@@ -16,4 +16,3 @@
 #define kSFColorChartFooterSideTextColor UIColorFromHex(0x222222)
 #define kSFColorChartFooterCenterTextColor UIColorFromHex(0x787878)
 #define kSFColorRangeViewBackgroundColor UIColorFromHex(0xf6c29a)
-#define kSFColorChartDotColor UIColorFromHex(0xda0000)

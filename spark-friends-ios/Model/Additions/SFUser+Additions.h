@@ -8,6 +8,12 @@
 
 #import "SFUser.h"
 
+// Enums
+typedef NS_ENUM(NSInteger, SFUserGender){
+    SFUserGenderMale,
+	SFUserGenderFemale
+};
+
 @interface SFUser (Additions)
 
 - (NSString *)fullName;
@@ -18,5 +24,8 @@
 - (CGFloat)minimumStepValue;
 - (CGFloat)averageStepValue;
 - (CGFloat)stepRange;
+
+// Demographics
+- (SFUserGender)gender;
 
 @end

@@ -89,4 +89,18 @@
     return abs([self maximumStepValue] - [self minimumStepValue]);
 }
 
+#pragma mark - Demographics
+
+- (SFUserGender)gender
+{
+    if ([self.firstName isEqualToString:@"Shannon"] ||
+        [self.firstName isEqualToString:@"Tracy"] ||
+        [self.firstName isEqualToString:@"Kate"] ||
+        [self.firstName isEqualToString:@"Laurel"])
+    {
+        return SFUserGenderFemale;
+    }
+    return SFUserGenderMale;
+}
+
 @end
