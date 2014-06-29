@@ -109,12 +109,12 @@ CGFloat static const kSFChartViewContainerLineChartLineWidth = 4.0f;
 
 - (NSUInteger)minimumAverageInLineChartView:(JBLineChartView *)lineChartView
 {
-    return [self.user averageStepValue] + ceil([self.user averageStepValue] * 0.5);
+    return [self.user averageStepValue] - ceil([self.user averageStepValue] * 0.3);
 }
 
 - (NSUInteger)maximumAverageInLineChartView:(JBLineChartView *)lineChartView
 {
-    return [self.user averageStepValue] - ceil([self.user averageStepValue] * 0.5);
+    return [self.user averageStepValue] + ceil([self.user averageStepValue] * 0.3);
 }
 
 #pragma mark - JBLineChartViewDelegate

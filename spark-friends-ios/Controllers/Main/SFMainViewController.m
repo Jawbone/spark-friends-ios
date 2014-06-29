@@ -34,12 +34,6 @@ NSString * const kSFMainViewControllerCellIdentifier = @"kSFMainViewControllerCe
 CGFloat static const kSFMainViewControllerLineChartLineWidth = 2.0f;
 CGFloat static const kSFMainViewControllerSeparatorPadding = 10.0f;
 
-@interface SFDataModel (Private)
-
-- (NSArray *)users;
-
-@end
-
 @interface SFMainViewController () <SFLineChartViewDataSource, JBLineChartViewDelegate>
 
 @property (nonatomic, strong) NSDateFormatter *dateFormatter;
@@ -89,17 +83,17 @@ CGFloat static const kSFMainViewControllerSeparatorPadding = 10.0f;
     if (indexPath.section == SFMainViewControllerSectionCurrentUser)
     {
         user = [SFDataModel sharedInstance].currentUser;
-        cell.lineChartView.tag = indexPath.row;
     }
     else if (indexPath.section == SFMainViewControllerSectionFriends)
     {
         user = [[[SFDataModel sharedInstance].currentUser friends] objectAtIndex:indexPath.row];
-        cell.lineChartView.tag = indexPath.row + 1;
     }
+
     cell.userImageView.image = user.profileImage;
     cell.nameLabel.text = [user fullName];
     cell.dateLabel.text = [NSString stringWithFormat:kSFStringLabelMemberSince, [self.dateFormatter stringFromDate:user.createDate]];
     
+    cell.lineChartView.user = user;
     cell.lineChartView.delegate = self;
     cell.lineChartView.dataSource = self;
     
@@ -155,8 +149,11 @@ CGFloat static const kSFMainViewControllerSeparatorPadding = 10.0f;
 
 - (NSUInteger)lineChartView:(JBLineChartView *)lineChartView numberOfVerticalValuesAtLineIndex:(NSUInteger)lineIndex
 {
-    SFUser *user = [[[SFDataModel sharedInstance] users] objectAtIndex:lineChartView.tag];
-    return [user.steps count];
+    if ([lineChartView isKindOfClass:[SFLineChartView class]])
+    {
+        return [((SFLineChartView *)lineChartView).user.steps count];
+    }
+    return 0;
 }
 
 - (UIColor *)lineChartView:(JBLineChartView *)lineChartView colorForLineAtLineIndex:(NSUInteger)lineIndex
@@ -171,23 +168,35 @@ CGFloat static const kSFMainViewControllerSeparatorPadding = 10.0f;
 
 - (NSUInteger)minimumAverageInLineChartView:(JBLineChartView *)lineChartView
 {
-    SFUser *user = [[[SFDataModel sharedInstance] users] objectAtIndex:lineChartView.tag];
-    return [user averageStepValue] + ceil([user averageStepValue] * 0.5);
+    if ([lineChartView isKindOfClass:[SFLineChartView class]])
+    {
+        SFUser *user = ((SFLineChartView *)lineChartView).user;
+        return [user averageStepValue] - ceil([user averageStepValue] * 0.3);
+    }
+    return 0;
 }
 
 - (NSUInteger)maximumAverageInLineChartView:(JBLineChartView *)lineChartView
 {
-    SFUser *user = [[[SFDataModel sharedInstance] users] objectAtIndex:lineChartView.tag];
-    return [user averageStepValue] - ceil([user averageStepValue] * 0.5);
+    if ([lineChartView isKindOfClass:[SFLineChartView class]])
+    {
+        SFUser *user = ((SFLineChartView *)lineChartView).user;
+        return [user averageStepValue] + ceil([user averageStepValue] * 0.3);
+    }
+    return 0;
 }
 
 #pragma mark - JBLineChartViewDelegate
 
 - (CGFloat)lineChartView:(JBLineChartView *)lineChartView verticalValueForHorizontalIndex:(NSUInteger)horizontalIndex atLineIndex:(NSUInteger)lineIndex
 {
-    SFUser *user = [[[SFDataModel sharedInstance] users] objectAtIndex:lineChartView.tag];
-    SFStep *step = [user.steps objectAtIndex:horizontalIndex];
-    return step.value;
+    if ([lineChartView isKindOfClass:[SFLineChartView class]])
+    {
+        SFUser *user = ((SFLineChartView *)lineChartView).user;
+        SFStep *step =  [user.steps objectAtIndex:horizontalIndex];
+        return step.value;
+    }
+    return 0.0f;
 }
 
 - (BOOL)lineChartView:(JBLineChartView *)lineChartView smoothLineAtLineIndex:(NSUInteger)lineIndex

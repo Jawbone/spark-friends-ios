@@ -59,7 +59,7 @@
         maximumAverage = [self.dataSource maximumAverageInLineChartView:self];
     }
     CGFloat yOffsetTop = (1 - (((CGFloat)maximumAverage) / self.maximumValue)) * [self availableHeight];
-
+    
     self.averageRangeView.frame = CGRectMake(0, yOffsetTop, self.bounds.size.width, self.bounds.size.height - yOffsetTop - yOffsetBottom);
 }
 

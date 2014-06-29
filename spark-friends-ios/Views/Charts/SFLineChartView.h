@@ -8,6 +8,9 @@
 
 #import "JBLineChartView.h"
 
+// Model
+#import "SFUser.h"
+
 @class SFLineChartView;
 
 @protocol SFLineChartViewDataSource <JBLineChartViewDataSource>
@@ -22,5 +25,7 @@
 @interface SFLineChartView : JBLineChartView
 
 @property (nonatomic, weak) id<SFLineChartViewDataSource> dataSource;
+
+@property (nonatomic, strong) SFUser *user;
 
 @end

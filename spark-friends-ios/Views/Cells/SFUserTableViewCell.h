@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+// Views
 #import "SFLineChartView.h"
 
 // Numerics
