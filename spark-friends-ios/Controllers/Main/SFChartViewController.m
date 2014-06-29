@@ -19,6 +19,7 @@
 // Numerics
 CGFloat static const kSFChartViewContainerPadding = 20.0f;
 CGFloat static const kSFChartViewContainerFooterHeight = 30.0f;
+CGFloat static const kSFChartViewContainerLineChartLineWidth = 4.0f;
 
 @interface SFChartViewContainer : UIView
 
@@ -99,6 +100,11 @@ CGFloat static const kSFChartViewContainerFooterHeight = 30.0f;
 - (UIColor *)lineChartView:(JBLineChartView *)lineChartView colorForLineAtLineIndex:(NSUInteger)lineIndex
 {
     return kSFColorChartLineColor;
+}
+
+- (CGFloat)lineChartView:(JBLineChartView *)lineChartView widthForLineAtLineIndex:(NSUInteger)lineIndex
+{
+    return kSFChartViewContainerLineChartLineWidth;
 }
 
 - (NSUInteger)minimumAverageInLineChartView:(JBLineChartView *)lineChartView

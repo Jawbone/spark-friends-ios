@@ -45,7 +45,6 @@ CGFloat const kSFUserTableViewCellHeight = 100.0f;
         [self addSubview:_dateLabel];
         
         _lineChartView = [[SFLineChartView alloc] initWithFrame:[self lineChartViewRect]];
-        _lineChartView.backgroundColor = [UIColor blackColor];
         [self addSubview:_lineChartView];
     }
     return self;
