@@ -17,3 +17,4 @@
 #define kSFStringLabelJan localize(@"label.jan", @"Jan")
 #define kSFStringLabelDec localize(@"label.dec", @"Dec")
 #define kSFStringLabel2013 localize(@"label.2013", @"2013")
+#define kSFStringLabelMemberSince localize(@"label.member.since", @"Member since %@")
