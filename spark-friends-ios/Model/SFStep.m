@@ -10,7 +10,6 @@
 
 @interface SFStep ()
 
-@property (nonatomic, strong) NSDate *createDate;
 @property (nonatomic, assign) NSUInteger value;
 
 @end
@@ -19,13 +18,12 @@
 
 #pragma mark - Alloc/Init
 
-- (id)initWithValue:(NSUInteger)value createDate:(NSDate *)createDate
+- (id)initWithValue:(NSUInteger)value
 {
     self = [super init];
     if (self)
     {
         _value = value;
-        _createDate = createDate;
     }
     return self;
 }

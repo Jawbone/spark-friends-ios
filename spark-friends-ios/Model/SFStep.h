@@ -10,9 +10,8 @@
 
 @interface SFStep : NSObject
 
-- (id)initWithValue:(NSUInteger)value createDate:(NSDate *)createDate;
+- (id)initWithValue:(NSUInteger)value;
 
-@property (nonatomic, readonly) NSDate *createDate;
 @property (nonatomic, readonly) NSUInteger value;
 
 @end

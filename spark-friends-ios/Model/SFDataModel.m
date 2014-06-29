@@ -14,10 +14,10 @@
 
 // Numerics
 NSUInteger static const kSFDataModelMonthsInYear = 12;
+NSUInteger static const kSFDataModelDaysInYear = 365;
 NSUInteger static const kSFDataModelMaxUsers = 10;
 NSUInteger static const kSFDataModelMaxStep = 15000;
 NSUInteger static const kSFDataModelMinStep = 3000;
-NSUInteger static const kSFDataModelTimeIntervalDay = 86400;
 
 @interface SFDataModel ()
 
@@ -99,11 +99,9 @@ NSUInteger static const kSFDataModelTimeIntervalDay = 86400;
             user.profileImage =  [self randomProfileImageWithGender:[user gender]];
             
             NSMutableArray *mutableSteps = [NSMutableArray array];
-            NSDate *baseDate = [NSDate date];
             for (NSUInteger dayIndex=0; dayIndex<kSFDataModelMonthsInYear; dayIndex++)
             {
-                NSDate *createDate = [NSDate dateWithTimeIntervalSince1970:[baseDate timeIntervalSinceNow] - (kSFDataModelTimeIntervalDay * dayIndex)];
-                SFStep *step = [[SFStep alloc] initWithValue:[self randomStep] createDate:createDate];
+                SFStep *step = [[SFStep alloc] initWithValue:[self randomStep]];
                 [mutableSteps addObject:step];
             }
             user.steps = [NSArray arrayWithArray:mutableSteps];
@@ -133,7 +131,14 @@ NSUInteger static const kSFDataModelTimeIntervalDay = 86400;
 
 - (NSDate *)randomCreateDate
 {
-    return [NSDate date];
+    NSUInteger minimumDate = kSFDataModelDaysInYear;
+    NSUInteger maximumDate = kSFDataModelDaysInYear * 3;
+    u_int32_t randomDays = arc4random_uniform(maximumDate - minimumDate + 1) + minimumDate;
+    NSDate *today = [NSDate date];
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *dateComponents = [calendar components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:today];
+    [dateComponents setDay:dateComponents.day - randomDays];
+    return [calendar dateFromComponents:dateComponents];
 }
 
 - (UIImage *)randomProfileImageWithGender:(SFUserGender)gender

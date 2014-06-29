@@ -22,7 +22,6 @@ CGFloat const kSFUserTableViewCellDateLabelHeight = 15.0f;
 // Getters
 - (CGSize)userImageViewSize;
 - (CGRect)userImageViewRect;
-
 - (CGSize)lineChartViewSize;
 - (CGRect)lineChartViewRect;
 
