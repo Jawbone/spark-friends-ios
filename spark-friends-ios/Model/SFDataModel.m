@@ -10,6 +10,7 @@
 
 // Models
 #import "SFStep.h"
+#import "SFUser+Additions.h"
 
 // Numerics
 NSUInteger static const kSFDataModelMonthsInYear = 12;
@@ -28,6 +29,8 @@ NSUInteger static const kSFDataModelTimeIntervalDay = 86400;
 - (NSUInteger)randomStep;
 - (NSString *)randomLastName;
 - (NSString *)randomFirstName;
+- (NSDate *)randomCreateDate;
+- (UIImage *)randomProfileImageWithGender:(SFUserGender)gender;
 
 @end
 
@@ -91,7 +94,10 @@ NSUInteger static const kSFDataModelTimeIntervalDay = 86400;
         {
             SFUser *user = [[SFUser alloc] init];
             user.firstName = [self randomFirstName];
-            user.lastName = [self randomLastName];            
+            user.lastName = [self randomLastName];
+            user.createDate = [self randomCreateDate];
+            user.profileImage =  [self randomProfileImageWithGender:[user gender]];
+            
             NSMutableArray *mutableSteps = [NSMutableArray array];
             NSDate *baseDate = [NSDate date];
             for (NSUInteger dayIndex=0; dayIndex<kSFDataModelMonthsInYear; dayIndex++)
@@ -123,6 +129,17 @@ NSUInteger static const kSFDataModelTimeIntervalDay = 86400;
 - (NSString *)randomLastName
 {
     return [self.lastNames objectAtIndex:arc4random() % [self.lastNames count]];
+}
+
+- (NSDate *)randomCreateDate
+{
+    return [NSDate date];
+}
+
+- (UIImage *)randomProfileImageWithGender:(SFUserGender)gender
+{
+    // TODO - real random images
+    return [UIImage imageNamed:@"profile_photo_male_1.png"];
 }
 
 @end

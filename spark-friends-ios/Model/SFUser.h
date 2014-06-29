@@ -14,5 +14,6 @@
 @property (nonatomic, strong) NSString *lastName;
 @property (nonatomic, strong) NSDate *createDate;
 @property (nonatomic, strong) NSArray *steps;
+@property (nonatomic, strong) UIImage *profileImage;
 
 @end

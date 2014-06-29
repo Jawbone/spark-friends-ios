@@ -8,9 +8,14 @@
 
 #import "SFUserTableViewCell.h"
 
+// Quartz
+#import <QuartzCore/QuartzCore.h>
+
 // Numerics
 CGFloat const kSFUserTableViewCellPadding = 10.0f;
-CGFloat const kSFUserTableViewCellHeight = 100.0f;
+CGFloat const kSFUserTableViewCellHeight = 80.0f;
+CGFloat const kSFUserTableViewCellNameLabelHeight = 25.0f;
+CGFloat const kSFUserTableViewCellDateLabelHeight = 15.0f;
 
 @interface SFUserTableViewCell ()
 
@@ -33,15 +38,22 @@ CGFloat const kSFUserTableViewCellHeight = 100.0f;
     if (self)
     {
         _userImageView = [[UIImageView alloc] initWithFrame:[self userImageViewRect]];
-        _userImageView.backgroundColor = [UIColor redColor];
+        _userImageView.layer.cornerRadius = ceil([self userImageViewRect].size.width * 0.5);
+        _userImageView.layer.masksToBounds = YES;
         [self addSubview:_userImageView];
         
         _nameLabel = [[UILabel alloc] init];
-        _nameLabel.backgroundColor = [UIColor purpleColor];
+        _nameLabel.backgroundColor = [UIColor clearColor];
+        _nameLabel.numberOfLines = 1;
+        _nameLabel.font = [UIFont boldSystemFontOfSize:16.0];
+        _nameLabel.adjustsFontSizeToFitWidth = YES;
         [self addSubview:_nameLabel];
         
         _dateLabel = [[UILabel alloc] init];
-        _dateLabel.backgroundColor = [UIColor yellowColor];
+        _dateLabel.backgroundColor = [UIColor clearColor];
+        _dateLabel.numberOfLines = 1;
+        _dateLabel.font = [UIFont italicSystemFontOfSize:12.0];
+        _dateLabel.adjustsFontSizeToFitWidth = YES;
         [self addSubview:_dateLabel];
         
         _lineChartView = [[SFLineChartView alloc] initWithFrame:[self lineChartViewRect]];
@@ -65,8 +77,8 @@ CGFloat const kSFUserTableViewCellHeight = 100.0f;
     CGFloat availableLabelWidth = self.bounds.size.width - self.userImageView.frame.size.width - self.lineChartView.frame.size.width - (kSFUserTableViewCellPadding * 4);
     
     // Labels
-    self.nameLabel.frame = CGRectMake(CGRectGetMaxX(self.userImageView.frame) + kSFUserTableViewCellPadding, kSFUserTableViewCellPadding, availableLabelWidth, 30);
-    self.dateLabel.frame = CGRectMake(CGRectGetMaxX(self.userImageView.frame) + kSFUserTableViewCellPadding, CGRectGetMaxY(self.nameLabel.frame), availableLabelWidth, 30);
+    self.nameLabel.frame = CGRectMake(CGRectGetMaxX(self.userImageView.frame) + kSFUserTableViewCellPadding, kSFUserTableViewCellPadding, availableLabelWidth, kSFUserTableViewCellNameLabelHeight);
+    self.dateLabel.frame = CGRectMake(CGRectGetMaxX(self.userImageView.frame) + kSFUserTableViewCellPadding, CGRectGetMaxY(self.nameLabel.frame), availableLabelWidth, kSFUserTableViewCellDateLabelHeight);
 }
 
 #pragma mark - Getters

@@ -24,6 +24,8 @@
 		9BD9A41A195C9105009E1F14 /* SFChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9A419195C9105009E1F14 /* SFChartViewController.m */; };
 		9BD9A421195C95FC009E1F14 /* SFLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9A420195C95FC009E1F14 /* SFLineChartView.m */; };
 		9BD9A42F195CA316009E1F14 /* SFChartFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9A42E195CA316009E1F14 /* SFChartFooterView.m */; };
+		9BFF4E741960885400924EB3 /* profile_photo_male_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BFF4E721960885400924EB3 /* profile_photo_male_1.png */; };
+		9BFF4E751960885400924EB3 /* profile_photo_male_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BFF4E731960885400924EB3 /* profile_photo_male_1@2x.png */; };
 		D3D72538695046FF8B71BA0A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D991FF4CA6A4C60B7BFC1AD /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +67,8 @@
 		9BD9A420195C95FC009E1F14 /* SFLineChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFLineChartView.m; sourceTree = "<group>"; };
 		9BD9A42D195CA316009E1F14 /* SFChartFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFChartFooterView.h; sourceTree = "<group>"; };
 		9BD9A42E195CA316009E1F14 /* SFChartFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFChartFooterView.m; sourceTree = "<group>"; };
+		9BFF4E721960885400924EB3 /* profile_photo_male_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile_photo_male_1.png; sourceTree = "<group>"; };
+		9BFF4E731960885400924EB3 /* profile_photo_male_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile_photo_male_1@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,7 @@
 				9B0621011947D9FD00954A3E /* spark-friends-ios */,
 				9B0620FA1947D9FD00954A3E /* Frameworks */,
 				9B0620F91947D9FD00954A3E /* Products */,
+				9BFF4E701960885400924EB3 /* Resources */,
 				564F704D6E66481096A6003A /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
@@ -245,6 +250,23 @@
 			path = Footers;
 			sourceTree = "<group>";
 		};
+		9BFF4E701960885400924EB3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9BFF4E711960885400924EB3 /* Images */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9BFF4E711960885400924EB3 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				9BFF4E721960885400924EB3 /* profile_photo_male_1.png */,
+				9BFF4E731960885400924EB3 /* profile_photo_male_1@2x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -299,7 +321,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BFF4E751960885400924EB3 /* profile_photo_male_1@2x.png in Resources */,
 				9B0621141947D9FD00954A3E /* Images.xcassets in Resources */,
+				9BFF4E741960885400924EB3 /* profile_photo_male_1.png in Resources */,
 				9B0621061947D9FD00954A3E /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

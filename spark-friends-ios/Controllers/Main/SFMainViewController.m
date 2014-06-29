@@ -41,6 +41,8 @@ CGFloat static const kSFMainViewControllerLineChartLineWidth = 2.0f;
 
 @interface SFMainViewController () <SFLineChartViewDataSource, JBLineChartViewDelegate>
 
+@property (nonatomic, strong) NSDateFormatter *dateFormatter;
+
 @end
 
 @implementation SFMainViewController
@@ -55,6 +57,7 @@ CGFloat static const kSFMainViewControllerLineChartLineWidth = 2.0f;
     self.view.backgroundColor = kSFColorBaseBackgroundColor;
     
     [self.tableView registerClass:[SFUserTableViewCell class] forCellReuseIdentifier:kSFMainViewControllerCellIdentifier];
+    [self.tableView setSeparatorInset:UIEdgeInsetsZero];
 }
 
 #pragma mark - UITableViewDataSource
@@ -92,8 +95,13 @@ CGFloat static const kSFMainViewControllerLineChartLineWidth = 2.0f;
         user = [[[SFDataModel sharedInstance].currentUser friends] objectAtIndex:indexPath.row];
         cell.lineChartView.tag = indexPath.row + 1;
     }
+    cell.userImageView.image = user.profileImage;
+    cell.nameLabel.text = [user fullName];
+    cell.dateLabel.text = [NSString stringWithFormat:@"Member since %@", [self.dateFormatter stringFromDate:user.createDate]];
+    
     cell.lineChartView.delegate = self;
     cell.lineChartView.dataSource = self;
+    
     [cell.lineChartView reloadData];
     return cell;
 }
@@ -184,6 +192,18 @@ CGFloat static const kSFMainViewControllerLineChartLineWidth = 2.0f;
 - (BOOL)lineChartView:(JBLineChartView *)lineChartView smoothLineAtLineIndex:(NSUInteger)lineIndex
 {
     return YES;
+}
+
+#pragma mark - Getters
+
+- (NSDateFormatter *)dateFormatter
+{
+    if (_dateFormatter == nil)
+    {
+        _dateFormatter = [[NSDateFormatter alloc] init];
+        [_dateFormatter setDateStyle:NSDateFormatterShortStyle];
+    }
+    return _dateFormatter;
 }
 
 @end
