@@ -45,7 +45,7 @@ CGFloat const kSFUserTableViewCellDateLabelHeight = 15.0f;
         _userImageViewBackground.layer.cornerRadius = ceil([self userImageViewBackgroundRect].size.width * 0.5);
         _userImageViewBackground.layer.masksToBounds = YES;
         _userImageViewBackground.backgroundColor = [UIColor whiteColor];
-        _userImageViewBackground.layer.borderColor = [UIColor grayColor].CGColor;
+        _userImageViewBackground.layer.borderColor = [UIColor lightGrayColor].CGColor;
         _userImageViewBackground.layer.borderWidth = 0.5f;
         [self addSubview:_userImageViewBackground];
         
