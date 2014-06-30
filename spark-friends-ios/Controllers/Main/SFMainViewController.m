@@ -31,7 +31,7 @@ typedef NS_ENUM(NSInteger, SFMainViewControllerSection){
 NSString * const kSFMainViewControllerCellIdentifier = @"kSFMainViewControllerCellIdentifier";
 
 // Numerics
-CGFloat static const kSFMainViewControllerLineChartLineWidth = 2.0f;
+CGFloat static const kSFMainViewControllerLineChartLineWidth = 1.0f;
 CGFloat static const kSFMainViewControllerSeparatorPadding = 10.0f;
 
 @interface SFMainViewController () <SFLineChartViewDataSource, JBLineChartViewDelegate>
@@ -158,7 +158,7 @@ CGFloat static const kSFMainViewControllerSeparatorPadding = 10.0f;
 
 - (UIColor *)lineChartView:(JBLineChartView *)lineChartView colorForLineAtLineIndex:(NSUInteger)lineIndex
 {
-    return kSFColorChartLineColor;
+    return kSFColorSparkChartLineColor;
 }
 
 - (CGFloat)lineChartView:(JBLineChartView *)lineChartView widthForLineAtLineIndex:(NSUInteger)lineIndex

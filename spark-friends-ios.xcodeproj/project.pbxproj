@@ -21,11 +21,11 @@
 		9BB02B93195A64820072E213 /* SFMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB02B92195A64820072E213 /* SFMainViewController.m */; };
 		9BB02B9A195A64A90072E213 /* SFBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB02B99195A64A90072E213 /* SFBaseNavigationController.m */; };
 		9BB02BAD195A8A9D0072E213 /* SFUser+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB02BAC195A8A9D0072E213 /* SFUser+Additions.m */; };
+		9BB27ADC19621AB20090629F /* profile_photo_mock_user_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BB27ADA19621AB20090629F /* profile_photo_mock_user_1.png */; };
+		9BB27ADD19621AB20090629F /* profile_photo_mock_user_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BB27ADB19621AB20090629F /* profile_photo_mock_user_1@2x.png */; };
 		9BD9A41A195C9105009E1F14 /* SFChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9A419195C9105009E1F14 /* SFChartViewController.m */; };
 		9BD9A421195C95FC009E1F14 /* SFLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9A420195C95FC009E1F14 /* SFLineChartView.m */; };
 		9BD9A42F195CA316009E1F14 /* SFChartFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9A42E195CA316009E1F14 /* SFChartFooterView.m */; };
-		9BFF4E741960885400924EB3 /* profile_photo_male_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BFF4E721960885400924EB3 /* profile_photo_male_1.png */; };
-		9BFF4E751960885400924EB3 /* profile_photo_male_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BFF4E731960885400924EB3 /* profile_photo_male_1@2x.png */; };
 		D3D72538695046FF8B71BA0A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D991FF4CA6A4C60B7BFC1AD /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -61,14 +61,14 @@
 		9BB02B9F195A6F3D0072E213 /* SFStringConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFStringConstants.h; sourceTree = "<group>"; };
 		9BB02BAB195A8A9D0072E213 /* SFUser+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SFUser+Additions.h"; sourceTree = "<group>"; };
 		9BB02BAC195A8A9D0072E213 /* SFUser+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SFUser+Additions.m"; sourceTree = "<group>"; };
+		9BB27ADA19621AB20090629F /* profile_photo_mock_user_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile_photo_mock_user_1.png; sourceTree = "<group>"; };
+		9BB27ADB19621AB20090629F /* profile_photo_mock_user_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile_photo_mock_user_1@2x.png"; sourceTree = "<group>"; };
 		9BD9A418195C9105009E1F14 /* SFChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFChartViewController.h; sourceTree = "<group>"; };
 		9BD9A419195C9105009E1F14 /* SFChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFChartViewController.m; sourceTree = "<group>"; };
 		9BD9A41F195C95FC009E1F14 /* SFLineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFLineChartView.h; sourceTree = "<group>"; };
 		9BD9A420195C95FC009E1F14 /* SFLineChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFLineChartView.m; sourceTree = "<group>"; };
 		9BD9A42D195CA316009E1F14 /* SFChartFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFChartFooterView.h; sourceTree = "<group>"; };
 		9BD9A42E195CA316009E1F14 /* SFChartFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFChartFooterView.m; sourceTree = "<group>"; };
-		9BFF4E721960885400924EB3 /* profile_photo_male_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile_photo_male_1.png; sourceTree = "<group>"; };
-		9BFF4E731960885400924EB3 /* profile_photo_male_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile_photo_male_1@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,8 +261,8 @@
 		9BFF4E711960885400924EB3 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				9BFF4E721960885400924EB3 /* profile_photo_male_1.png */,
-				9BFF4E731960885400924EB3 /* profile_photo_male_1@2x.png */,
+				9BB27ADA19621AB20090629F /* profile_photo_mock_user_1.png */,
+				9BB27ADB19621AB20090629F /* profile_photo_mock_user_1@2x.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -321,10 +321,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BFF4E751960885400924EB3 /* profile_photo_male_1@2x.png in Resources */,
+				9BB27ADD19621AB20090629F /* profile_photo_mock_user_1@2x.png in Resources */,
 				9B0621141947D9FD00954A3E /* Images.xcassets in Resources */,
-				9BFF4E741960885400924EB3 /* profile_photo_male_1.png in Resources */,
 				9B0621061947D9FD00954A3E /* InfoPlist.strings in Resources */,
+				9BB27ADC19621AB20090629F /* profile_photo_mock_user_1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,25 +12,37 @@
 #import "SFStep.h"
 #import "SFUser+Additions.h"
 
+// Enums
+typedef NS_ENUM(NSUInteger, SFDataModelMockUserType){
+	SFDataModelMockUserType1,
+    SFDataModelMockUserType2,
+    SFDataModelMockUserType3,
+    SFDataModelMockUserType4,
+    SFDataModelMockUserType5,
+    SFDataModelMockUserType6,
+    SFDataModelMockUserType7,
+    SFDataModelMockUserType8,
+    SFDataModelMockUserType9,
+    SFDataModelMockUserType10,
+    SFDataModelMockUserTypeCount
+};
+
 // Numerics
 NSUInteger static const kSFDataModelMonthsInYear = 12;
 NSUInteger static const kSFDataModelDaysInYear = 365;
-NSUInteger static const kSFDataModelMaxUsers = 10;
 NSUInteger static const kSFDataModelMaxStep = 15000;
 NSUInteger static const kSFDataModelMinStep = 3000;
 
 @interface SFDataModel ()
 
 @property (nonatomic, strong) NSArray *users;
-@property (nonatomic, strong) NSArray *firstNames;
-@property (nonatomic, strong) NSArray *lastNames;
 
-// Helpers
+// Random helpers
 - (NSUInteger)randomStep;
-- (NSString *)randomLastName;
-- (NSString *)randomFirstName;
 - (NSDate *)randomCreateDate;
-- (UIImage *)randomProfileImageWithGender:(SFUserGender)gender;
+
+// Users helpers
+- (SFUser *)generateMockUserType:(SFDataModelMockUserType)userType;
 
 @end
 
@@ -48,36 +60,6 @@ NSUInteger static const kSFDataModelMinStep = 3000;
 	return instance;
 }
 
-- (id)init
-{
-    self = [super init];
-    if (self)
-    {
-        _firstNames = @[@"Shannon",
-                        @"Barrie",
-                        @"Tracy",
-                        @"Terrance",
-                        @"Ben",
-                        @"Steve",
-                        @"Kate",
-                        @"Russ",
-                        @"Laurel",
-                        @"Jake"];
-
-        _lastNames = @[@"Hale",
-                        @"Smith",
-                        @"McGee",
-                        @"Gibb",
-                        @"Weekes",
-                        @"Barr",
-                        @"Brannon",
-                        @"Bundy",
-                        @"Slater",
-                        @"Thomas"];
-    }
-    return self;
-}
-
 #pragma mark - Getters
 
 - (SFUser *)currentUser
@@ -90,13 +72,9 @@ NSUInteger static const kSFDataModelMinStep = 3000;
     if (_users == nil)
     {
         NSMutableArray *mutableUsers = [NSMutableArray array];
-        for (NSUInteger userIndex=0; userIndex<kSFDataModelMaxUsers; userIndex++)
+        for (NSUInteger userIndex=0; userIndex<SFDataModelMockUserTypeCount; userIndex++)
         {
-            SFUser *user = [[SFUser alloc] init];
-            user.firstName = [self randomFirstName];
-            user.lastName = [self randomLastName];
-            user.createDate = [self randomCreateDate];
-            user.profileImage =  [self randomProfileImageWithGender:[user gender]];
+            SFUser *user = [self generateMockUserType:userIndex];
             
             NSMutableArray *mutableSteps = [NSMutableArray array];
             for (NSUInteger dayIndex=0; dayIndex<kSFDataModelMonthsInYear; dayIndex++)
@@ -112,21 +90,11 @@ NSUInteger static const kSFDataModelMinStep = 3000;
     return _users;
 }
 
-#pragma mark - Helpers
+#pragma mark - Random Helpers
 
 - (NSUInteger)randomStep
 {
     return ((arc4random() % (kSFDataModelMaxStep - kSFDataModelMinStep + 1)) + kSFDataModelMinStep);
-}
-
-- (NSString *)randomFirstName
-{
-    return [self.firstNames objectAtIndex:arc4random() % [self.firstNames count]];
-}
-
-- (NSString *)randomLastName
-{
-    return [self.lastNames objectAtIndex:arc4random() % [self.lastNames count]];
 }
 
 - (NSDate *)randomCreateDate
@@ -141,10 +109,55 @@ NSUInteger static const kSFDataModelMinStep = 3000;
     return [calendar dateFromComponents:dateComponents];
 }
 
-- (UIImage *)randomProfileImageWithGender:(SFUserGender)gender
+- (SFUser *)generateMockUserType:(SFDataModelMockUserType)userType
 {
-    // TODO - real random images
-    return [UIImage imageNamed:@"profile_photo_male_1.png"];
+    SFUser *mockUser = [[SFUser alloc] init];
+    mockUser.createDate = [self randomCreateDate];
+
+    if (userType == SFDataModelMockUserType1)
+    {
+        mockUser.firstName = @"Terry";
+        mockUser.lastName = @"Worona";
+        mockUser.profileImage = [UIImage imageNamed:@"profile_photo_mock_user_1.png"];
+    }
+    else if (userType == SFDataModelMockUserType2)
+    {
+        
+    }
+    else if (userType == SFDataModelMockUserType3)
+    {
+        
+    }
+    else if (userType == SFDataModelMockUserType4)
+    {
+        
+    }
+    else if (userType == SFDataModelMockUserType5)
+    {
+        
+    }
+    else if (userType == SFDataModelMockUserType6)
+    {
+        
+    }
+    else if (userType == SFDataModelMockUserType7)
+    {
+        
+    }
+    else if (userType == SFDataModelMockUserType8)
+    {
+        
+    }
+    else if (userType == SFDataModelMockUserType9)
+    {
+        
+    }
+    else if (userType == SFDataModelMockUserType10)
+    {
+        
+    }
+    
+    return mockUser;
 }
 
 @end
