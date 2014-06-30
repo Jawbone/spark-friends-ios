@@ -160,9 +160,9 @@ NSUInteger static const kSFDataModelMinStep = 3000;
     }
     else if (userType == SFDataModelMockUserType8)
     {
-        mockUser.firstName = @"Olivia";
-        mockUser.lastName = @"Woods";
-        mockUser.gender = SFUserGenderFemale;
+        mockUser.firstName = @"Mason";
+        mockUser.lastName = @"Webb";
+        mockUser.gender = SFUserGenderMale;
     }
     else if (userType == SFDataModelMockUserType9)
     {
