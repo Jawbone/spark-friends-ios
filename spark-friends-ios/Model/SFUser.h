@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+// Enums
+typedef NS_ENUM(NSInteger, SFUserGender){
+    SFUserGenderMale,
+	SFUserGenderFemale
+};
+
 @interface SFUser : NSObject
 
 @property (nonatomic, strong) NSString *firstName;
@@ -15,5 +21,6 @@
 @property (nonatomic, strong) NSDate *createDate;
 @property (nonatomic, strong) NSArray *steps;
 @property (nonatomic, strong) UIImage *profileImage;
+@property (nonatomic, assign) SFUserGender gender;
 
 @end

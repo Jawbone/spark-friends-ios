@@ -40,6 +40,7 @@ NSUInteger static const kSFDataModelMinStep = 3000;
 // Random helpers
 - (NSUInteger)randomStep;
 - (NSDate *)randomCreateDate;
+- (UIImage *)randomProfileImageWithGender:(SFUserGender)gender;
 
 // Users helpers
 - (SFUser *)generateMockUserType:(SFDataModelMockUserType)userType;
@@ -113,48 +114,67 @@ NSUInteger static const kSFDataModelMinStep = 3000;
 {
     SFUser *mockUser = [[SFUser alloc] init];
     mockUser.createDate = [self randomCreateDate];
+    mockUser.profileImage = [UIImage imageNamed:[NSString stringWithFormat:@"profile_photo_mock_user_%d.png", userType + 1]];
 
     if (userType == SFDataModelMockUserType1)
     {
-        mockUser.firstName = @"Terry";
-        mockUser.lastName = @"Worona";
-        mockUser.profileImage = [UIImage imageNamed:@"profile_photo_mock_user_1.png"];
+        mockUser.firstName = @"Mathew";
+        mockUser.lastName = @"Haper";
+        mockUser.gender = SFUserGenderMale;
     }
     else if (userType == SFDataModelMockUserType2)
     {
-        
+        mockUser.firstName = @"Dana";
+        mockUser.lastName = @"Fletcher";
+        mockUser.gender = SFUserGenderFemale;
     }
     else if (userType == SFDataModelMockUserType3)
     {
-        
+        mockUser.firstName = @"Ella";
+        mockUser.lastName = @"Hudson";
+        mockUser.gender = SFUserGenderFemale;
     }
     else if (userType == SFDataModelMockUserType4)
     {
-        
+        mockUser.firstName = @"Donald";
+        mockUser.lastName = @"Miller";
+        mockUser.gender = SFUserGenderMale;
     }
     else if (userType == SFDataModelMockUserType5)
     {
-        
+        mockUser.firstName = @"Albert";
+        mockUser.lastName = @"Murray";
+        mockUser.gender = SFUserGenderMale;
     }
     else if (userType == SFDataModelMockUserType6)
     {
-        
+        mockUser.firstName = @"Byron";
+        mockUser.lastName = @"Davis";
+        mockUser.gender = SFUserGenderMale;
     }
     else if (userType == SFDataModelMockUserType7)
     {
-        
+        mockUser.firstName = @"Olivia";
+        mockUser.lastName = @"Woods";
+        mockUser.gender = SFUserGenderFemale;
     }
     else if (userType == SFDataModelMockUserType8)
     {
-        
+        mockUser.firstName = @"Olivia";
+        mockUser.lastName = @"Woods";
+        mockUser.gender = SFUserGenderFemale;
     }
     else if (userType == SFDataModelMockUserType9)
     {
-        
+        mockUser.firstName = @"Jon";
+        mockUser.lastName = @"Nelson";
+        mockUser.gender = SFUserGenderMale;
     }
     else if (userType == SFDataModelMockUserType10)
     {
-        
+        mockUser.firstName = @"Hannah";
+        mockUser.lastName = @"Neal";
+        mockUser.gender = SFUserGenderFemale;
     }
     
     return mockUser;
