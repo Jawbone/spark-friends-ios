@@ -13,13 +13,18 @@
 
 // Numerics
 CGFloat const kSFUserTableViewCellPadding = 10.0f;
+CGFloat const kSFUserTableViewCellProfilePhotoPadding = 2.0f;
 CGFloat const kSFUserTableViewCellHeight = 80.0f;
 CGFloat const kSFUserTableViewCellNameLabelHeight = 25.0f;
 CGFloat const kSFUserTableViewCellDateLabelHeight = 15.0f;
 
 @interface SFUserTableViewCell ()
 
+@property (nonatomic, strong) UIView *userImageViewBackground;
+
 // Getters
+- (CGSize)userImageViewBackgroundSize;
+- (CGRect)userImageViewBackgroundRect;
 - (CGSize)userImageViewSize;
 - (CGRect)userImageViewRect;
 - (CGSize)lineChartViewSize;
@@ -36,6 +41,14 @@ CGFloat const kSFUserTableViewCellDateLabelHeight = 15.0f;
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self)
     {
+        _userImageViewBackground = [[UIView alloc] initWithFrame:[self userImageViewBackgroundRect]];
+        _userImageViewBackground.layer.cornerRadius = ceil([self userImageViewBackgroundRect].size.width * 0.5);
+        _userImageViewBackground.layer.masksToBounds = YES;
+        _userImageViewBackground.backgroundColor = [UIColor whiteColor];
+        _userImageViewBackground.layer.borderColor = [UIColor grayColor].CGColor;
+        _userImageViewBackground.layer.borderWidth = 0.5f;
+        [self addSubview:_userImageViewBackground];
+        
         _userImageView = [[UIImageView alloc] initWithFrame:[self userImageViewRect]];
         _userImageView.layer.cornerRadius = ceil([self userImageViewRect].size.width * 0.5);
         _userImageView.layer.masksToBounds = YES;
@@ -66,6 +79,9 @@ CGFloat const kSFUserTableViewCellDateLabelHeight = 15.0f;
 - (void)layoutSubviews
 {
     [super layoutSubviews];
+
+    // User image background
+    self.userImageViewBackground.frame = [self userImageViewBackgroundRect];
     
     // User image
     self.userImageView.frame = [self userImageViewRect];
@@ -82,14 +98,24 @@ CGFloat const kSFUserTableViewCellDateLabelHeight = 15.0f;
 
 #pragma mark - Getters
 
-- (CGSize)userImageViewSize
+- (CGSize)userImageViewBackgroundSize
 {
     return CGSizeMake(kSFUserTableViewCellHeight - (kSFUserTableViewCellPadding * 2), kSFUserTableViewCellHeight - (kSFUserTableViewCellPadding * 2));
 }
 
+- (CGRect)userImageViewBackgroundRect
+{
+    return CGRectMake(kSFUserTableViewCellPadding, kSFUserTableViewCellPadding, [self userImageViewBackgroundSize].width, [self userImageViewBackgroundSize].height);
+}
+
+- (CGSize)userImageViewSize
+{
+    return CGSizeMake(kSFUserTableViewCellHeight - (kSFUserTableViewCellPadding * 2) - (kSFUserTableViewCellProfilePhotoPadding * 2), kSFUserTableViewCellHeight - (kSFUserTableViewCellPadding * 2) - (kSFUserTableViewCellProfilePhotoPadding * 2));
+}
+
 - (CGRect)userImageViewRect
 {
-    return CGRectMake(kSFUserTableViewCellPadding, kSFUserTableViewCellPadding, [self userImageViewSize].width, [self userImageViewSize].height);
+    return CGRectMake(kSFUserTableViewCellPadding + kSFUserTableViewCellProfilePhotoPadding, kSFUserTableViewCellPadding + kSFUserTableViewCellProfilePhotoPadding, [self userImageViewSize].width, [self userImageViewSize].height);
 }
 
 - (CGSize)lineChartViewSize
