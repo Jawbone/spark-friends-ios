@@ -38,3 +38,5 @@ More information about CocoaPods can be found <a href="http://cocoapods.org/" ta
 ## License
 
 Usage is provided under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License</a> (v2.0). See <a href="https://github.com/Jawbone/anscombe-quartet-ios/blob/master/LICENSE">LICENSE</a> for full details.
+
+All (fake) user profiles were randomly generated using <a href="http://randomuser.me/" target="_blank">randomuser.me</a> & are under the <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/deed.en" target="_blank">Creative Commons BY-NC-SA 2.0</a> license.
