@@ -40,7 +40,6 @@ NSUInteger static const kSFDataModelMinStep = 3000;
 // Random helpers
 - (NSUInteger)randomStep;
 - (NSDate *)randomCreateDate;
-- (UIImage *)randomProfileImageWithGender:(SFUserGender)gender;
 
 // Users helpers
 - (SFUser *)generateMockUserType:(SFDataModelMockUserType)userType;

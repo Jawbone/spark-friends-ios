@@ -105,7 +105,7 @@ CGFloat static const kSFMainViewControllerSeparatorPadding = 10.0f;
 {
     if (section == SFMainViewControllerSectionCurrentUser)
     {
-        return kSFStringLabelCurrentUser;
+        return kSFStringLabelYou;
     }
     else if (section == SFMainViewControllerSectionFriends)
     {

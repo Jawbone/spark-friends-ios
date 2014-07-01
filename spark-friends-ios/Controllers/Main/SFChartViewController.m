@@ -15,11 +15,13 @@
 // Views
 #import "SFLineChartView.h"
 #import "SFChartFooterView.h"
+#import "SFChartHeaderView.h"
 
 // Numerics
 CGFloat static const kSFChartViewContainerPadding = 20.0f;
+CGFloat static const kSFChartViewContainerHeaderHeight = 40.0f;
 CGFloat static const kSFChartViewContainerFooterHeight = 30.0f;
-CGFloat static const kSFChartViewContainerLineChartLineWidth = 4.0f;
+CGFloat static const kSFChartViewContainerLineChartLineWidth = 3.0f;
 
 @interface SFChartViewContainer : UIView
 
@@ -68,6 +70,10 @@ CGFloat static const kSFChartViewContainerLineChartLineWidth = 4.0f;
     self.chartContainer.lineChartView.maximumValue = [self.user maximumStepValue];
     self.chartContainer.lineChartView.minimumValue = [self.user minimumStepValue];
     
+    SFChartHeaderView *headerView = [[SFChartHeaderView alloc] initWithFrame:CGRectMake(self.view.bounds.origin.x, self.view.bounds.origin.y, self.view.bounds.size.width, kSFChartViewContainerHeaderHeight)];
+    headerView.titleLabel.text = @"Annual Step Data";
+    self.chartContainer.lineChartView.headerView = headerView;
+
     SFChartFooterView *footerView = [[SFChartFooterView alloc] initWithFrame:CGRectMake(self.view.bounds.origin.x, self.view.bounds.origin.y, self.view.bounds.size.width, kSFChartViewContainerFooterHeight)];
     footerView.sectionCount = 2;
     footerView.leftLabel.text = [kSFStringLabelJan uppercaseString];

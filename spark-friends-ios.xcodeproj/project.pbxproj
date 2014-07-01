@@ -41,6 +41,7 @@
 		9BB27B01196223C60090629F /* profile_photo_mock_user_9@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BB27AFF196223C60090629F /* profile_photo_mock_user_9@2x.png */; };
 		9BB27B041962252C0090629F /* profile_photo_mock_user_10.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BB27B021962252C0090629F /* profile_photo_mock_user_10.png */; };
 		9BB27B051962252C0090629F /* profile_photo_mock_user_10@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BB27B031962252C0090629F /* profile_photo_mock_user_10@2x.png */; };
+		9BB27B0C19622A3F0090629F /* SFChartHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB27B0B19622A3F0090629F /* SFChartHeaderView.m */; };
 		9BD9A41A195C9105009E1F14 /* SFChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9A419195C9105009E1F14 /* SFChartViewController.m */; };
 		9BD9A421195C95FC009E1F14 /* SFLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9A420195C95FC009E1F14 /* SFLineChartView.m */; };
 		9BD9A42F195CA316009E1F14 /* SFChartFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9A42E195CA316009E1F14 /* SFChartFooterView.m */; };
@@ -99,6 +100,8 @@
 		9BB27AFF196223C60090629F /* profile_photo_mock_user_9@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile_photo_mock_user_9@2x.png"; sourceTree = "<group>"; };
 		9BB27B021962252C0090629F /* profile_photo_mock_user_10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile_photo_mock_user_10.png; sourceTree = "<group>"; };
 		9BB27B031962252C0090629F /* profile_photo_mock_user_10@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile_photo_mock_user_10@2x.png"; sourceTree = "<group>"; };
+		9BB27B0A19622A3F0090629F /* SFChartHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFChartHeaderView.h; sourceTree = "<group>"; };
+		9BB27B0B19622A3F0090629F /* SFChartHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFChartHeaderView.m; sourceTree = "<group>"; };
 		9BD9A418195C9105009E1F14 /* SFChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFChartViewController.h; sourceTree = "<group>"; };
 		9BD9A419195C9105009E1F14 /* SFChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFChartViewController.m; sourceTree = "<group>"; };
 		9BD9A41F195C95FC009E1F14 /* SFLineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFLineChartView.h; sourceTree = "<group>"; };
@@ -207,6 +210,7 @@
 				9BD9A41E195C95FC009E1F14 /* Charts */,
 				9BB02B8B195A643F0072E213 /* Cells */,
 				9BD9A42C195CA316009E1F14 /* Footers */,
+				9BB27B0919622A3F0090629F /* Headers */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -266,6 +270,15 @@
 				9BB02BAC195A8A9D0072E213 /* SFUser+Additions.m */,
 			);
 			path = Additions;
+			sourceTree = "<group>";
+		};
+		9BB27B0919622A3F0090629F /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				9BB27B0A19622A3F0090629F /* SFChartHeaderView.h */,
+				9BB27B0B19622A3F0090629F /* SFChartHeaderView.m */,
+			);
+			path = Headers;
 			sourceTree = "<group>";
 		};
 		9BD9A41E195C95FC009E1F14 /* Charts */ = {
@@ -446,6 +459,7 @@
 				9B4C70D31947DC67004CD3AE /* SFDataModel.m in Sources */,
 				9B0621081947D9FD00954A3E /* main.m in Sources */,
 				9B30C2C11947DA38005B3530 /* AppDelegate.m in Sources */,
+				9BB27B0C19622A3F0090629F /* SFChartHeaderView.m in Sources */,
 				9B4C70D61947DC79004CD3AE /* SFUser.m in Sources */,
 				9BD9A42F195CA316009E1F14 /* SFChartFooterView.m in Sources */,
 				9BB02B93195A64820072E213 /* SFMainViewController.m in Sources */,
