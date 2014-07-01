@@ -8,11 +8,22 @@
 
 #import "SFBaseNavigationController.h"
 
-@interface SFBaseNavigationController ()
-
-@end
-
 @implementation SFBaseNavigationController
+
+#pragma mark - Alloc/Init
+
+- (id)initWithRootViewController:(UIViewController *)rootViewController
+{
+    self = [super initWithRootViewController:rootViewController];
+    if (self)
+    {
+        self.navigationBar.barTintColor = [UIColor whiteColor];
+        self.navigationBar.translucent = NO;
+    }
+    return self;
+}
+
+#pragma mark - Orientation
 
 - (BOOL)shouldAutorotate
 {

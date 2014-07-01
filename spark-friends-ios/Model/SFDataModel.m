@@ -32,7 +32,6 @@ NSUInteger static const kSFDataModelMonthsInYear = 12;
 NSUInteger static const kSFDataModelDaysInYear = 365;
 NSUInteger static const kSFDataModelMaxStep = 15000;
 NSUInteger static const kSFDataModelMinStep = 3000;
-CGFloat static const kSFDataModelAverageRange = 1000.0f;
 static NSString *const kSFDataModelProfilePhotoMockUser = @"profile_photo_mock_user_%d.png";
 
 @interface SFDataModel ()
@@ -199,16 +198,6 @@ static NSString *const kSFDataModelProfilePhotoMockUser = @"profile_photo_mock_u
         }
     }
     return currentMaxStepValue;
-}
-
-- (CGFloat)minimumAverageStepValue
-{
-    return [self averageStepValue] - kSFDataModelAverageRange;
-}
-
-- (CGFloat)maximumAverageStepValue
-{
-    return [self averageStepValue] + kSFDataModelAverageRange;
 }
 
 - (CGFloat)minimumStepValue

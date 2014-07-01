@@ -124,12 +124,12 @@ NSUInteger static const kSFChartViewControllerChartLineCount = 1;
 
 - (NSUInteger)minimumAverageInLineChartView:(JBLineChartView *)lineChartView
 {
-    return [[SFDataModel sharedInstance] minimumAverageStepValue];
+    return [[SFDataModel sharedInstance] averageStepValue];
 }
 
 - (NSUInteger)maximumAverageInLineChartView:(JBLineChartView *)lineChartView
 {
-    return [[SFDataModel sharedInstance] maximumAverageStepValue];
+    return [[SFDataModel sharedInstance] averageStepValue];
 }
 
 #pragma mark - JBLineChartViewDelegate

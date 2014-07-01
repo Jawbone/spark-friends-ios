@@ -17,8 +17,6 @@
 - (SFUser *)currentUser;
 
 // Metrics
-- (CGFloat)minimumAverageStepValue;
-- (CGFloat)maximumAverageStepValue;
 - (CGFloat)maximumStepValue;
 - (CGFloat)minimumStepValue;
 - (CGFloat)averageStepValue;

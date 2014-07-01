@@ -173,7 +173,7 @@ NSUInteger static const kSFMainViewControllerChartLineCount = 1;
 {
     if ([lineChartView isKindOfClass:[SFLineChartView class]])
     {
-        return [[SFDataModel sharedInstance] minimumAverageStepValue];
+        return [[SFDataModel sharedInstance] averageStepValue];
     }
     return 0;
 }
@@ -182,7 +182,7 @@ NSUInteger static const kSFMainViewControllerChartLineCount = 1;
 {
     if ([lineChartView isKindOfClass:[SFLineChartView class]])
     {
-        return [[SFDataModel sharedInstance] maximumAverageStepValue];
+        return [[SFDataModel sharedInstance] averageStepValue];
     }
     return 0;
 }

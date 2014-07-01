@@ -61,9 +61,7 @@
         maximumAverage = [self.dataSource maximumAverageInLineChartView:self];
     }
     CGFloat yOffsetBottom = (((CGFloat)maximumAverage) / self.maximumValue) * [self availableHeight];
-    
-    NSLog(@"minimum %d maximum %d and average %f", minimumAverage, maximumAverage, [[SFDataModel sharedInstance] averageStepValue]);
-    
+        
     self.averageRangeView.frame = CGRectMake(0, yOffsetTop, self.bounds.size.width, self.bounds.size.height - yOffsetTop - yOffsetBottom);
 }
 
