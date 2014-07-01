@@ -69,6 +69,7 @@
 		9B4C70D51947DC79004CD3AE /* SFUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFUser.m; sourceTree = "<group>"; };
 		9B4C70D71947DC82004CD3AE /* SFStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFStep.h; sourceTree = "<group>"; };
 		9B4C70D81947DC82004CD3AE /* SFStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFStep.m; sourceTree = "<group>"; };
+		9B6DEBBE196241B1005FFCE2 /* SFFontConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFFontConstants.h; sourceTree = "<group>"; };
 		9BB02B8C195A643F0072E213 /* SFUserTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFUserTableViewCell.h; sourceTree = "<group>"; };
 		9BB02B8D195A643F0072E213 /* SFUserTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFUserTableViewCell.m; sourceTree = "<group>"; };
 		9BB02B91195A64820072E213 /* SFMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFMainViewController.h; sourceTree = "<group>"; };
@@ -258,6 +259,7 @@
 			children = (
 				9BB02B9E195A6F320072E213 /* SFColorConstants.h */,
 				9BB02B9D195A6F250072E213 /* SFConstants.h */,
+				9B6DEBBE196241B1005FFCE2 /* SFFontConstants.h */,
 				9BB02B9F195A6F3D0072E213 /* SFStringConstants.h */,
 			);
 			path = Constants;

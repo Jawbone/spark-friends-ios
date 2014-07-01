@@ -17,6 +17,9 @@ CGFloat const kSFChartFooterViewSeparatorSectionPadding = 1.0f;
 
 @property (nonatomic, strong) UIView *topSeparatorView;
 
+// Getters
+- (UILabel *)footerLabel;
+
 @end
 
 @implementation SFChartFooterView
@@ -34,34 +37,19 @@ CGFloat const kSFChartFooterViewSeparatorSectionPadding = 1.0f;
         _topSeparatorView.backgroundColor = kSFColorChartFooterSeparatorColor;
         [self addSubview:_topSeparatorView];
         
-        _leftLabel = [[UILabel alloc] init];
-        _leftLabel.adjustsFontSizeToFitWidth = YES;
-        _leftLabel.font = [UIFont boldSystemFontOfSize:10];
+        _leftLabel = [self footerLabel];
         _leftLabel.textAlignment = NSTextAlignmentLeft;
         _leftLabel.textColor = kSFColorChartFooterSideTextColor;
-        _leftLabel.backgroundColor = [UIColor clearColor];
-        _leftLabel.shadowColor = [UIColor whiteColor];
-        _leftLabel.shadowOffset = CGSizeMake(0, 1);
         [self addSubview:_leftLabel];
 
-        _centerLabel = [[UILabel alloc] init];
-        _centerLabel.adjustsFontSizeToFitWidth = YES;
-        _centerLabel.font = [UIFont boldSystemFontOfSize:10];
+        _centerLabel = [self footerLabel];
         _centerLabel.textAlignment = NSTextAlignmentCenter;
         _centerLabel.textColor = kSFColorChartFooterCenterTextColor;
-        _centerLabel.backgroundColor = [UIColor clearColor];
-        _centerLabel.shadowColor = [UIColor whiteColor];
-        _centerLabel.shadowOffset = CGSizeMake(0, 1);
         [self addSubview:_centerLabel];
-        
-        _rightLabel = [[UILabel alloc] init];
-        _rightLabel.adjustsFontSizeToFitWidth = YES;
-        _rightLabel.font = [UIFont boldSystemFontOfSize:10];
+
+        _rightLabel = [self footerLabel];
         _rightLabel.textAlignment = NSTextAlignmentRight;
         _rightLabel.textColor = kSFColorChartFooterSideTextColor;
-        _rightLabel.backgroundColor = [UIColor clearColor];
-        _rightLabel.shadowColor = [UIColor whiteColor];
-        _rightLabel.shadowOffset = CGSizeMake(0, 1);
         [self addSubview:_rightLabel];
     }
     return self;
@@ -129,6 +117,19 @@ CGFloat const kSFChartFooterViewSeparatorSectionPadding = 1.0f;
 {
     _sectionCount = sectionCount;
     [self setNeedsDisplay];
+}
+
+#pragma mark - Getters
+
+- (UILabel *)footerLabel
+{
+    UILabel *footerLabel = [[UILabel alloc] init];
+    footerLabel.adjustsFontSizeToFitWidth = YES;
+    footerLabel.font = kGAFontFooterView;
+    footerLabel.backgroundColor = [UIColor clearColor];
+    footerLabel.shadowColor = [UIColor whiteColor];
+    footerLabel.shadowOffset = CGSizeMake(0, 1);
+    return footerLabel;
 }
 
 @end

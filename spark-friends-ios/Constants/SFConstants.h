@@ -6,5 +6,6 @@
 //  Copyright (c) 2014 Jawbone. All rights reserved.
 //
 
+#import "SFFontConstants.h"
 #import "SFColorConstants.h"
 #import "SFStringConstants.h"
