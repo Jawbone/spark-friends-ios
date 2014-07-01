@@ -33,6 +33,7 @@ NSUInteger static const kSFDataModelDaysInYear = 365;
 NSUInteger static const kSFDataModelMaxStep = 15000;
 NSUInteger static const kSFDataModelMinStep = 3000;
 CGFloat static const kSFDataModelAverageRangeMultiplier = 0.3f;
+static NSString *const kSFDataModelProfilePhotoMockUser = @"profile_photo_mock_user_%d.png";
 
 @interface SFDataModel ()
 
@@ -117,7 +118,7 @@ CGFloat static const kSFDataModelAverageRangeMultiplier = 0.3f;
 {
     SFUser *mockUser = [[SFUser alloc] init];
     mockUser.createDate = [self randomCreateDate];
-    mockUser.profileImage = [UIImage imageNamed:[NSString stringWithFormat:@"profile_photo_mock_user_%d.png", userType + 1]];
+    mockUser.profileImage = [UIImage imageNamed:[NSString stringWithFormat:kSFDataModelProfilePhotoMockUser, userType + 1]];
 
     if (userType == SFDataModelMockUserType1)
     {

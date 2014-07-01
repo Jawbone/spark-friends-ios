@@ -125,7 +125,7 @@ CGFloat const kSFChartFooterViewSeparatorSectionPadding = 1.0f;
 {
     UILabel *footerLabel = [[UILabel alloc] init];
     footerLabel.adjustsFontSizeToFitWidth = YES;
-    footerLabel.font = kGAFontFooterView;
+    footerLabel.font = kSfFontFooterViewLabel;
     footerLabel.backgroundColor = [UIColor clearColor];
     footerLabel.shadowColor = [UIColor whiteColor];
     footerLabel.shadowOffset = CGSizeMake(0, 1);

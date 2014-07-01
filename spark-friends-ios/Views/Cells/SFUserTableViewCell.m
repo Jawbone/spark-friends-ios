@@ -17,6 +17,7 @@ CGFloat const kSFUserTableViewCellProfilePhotoPadding = 2.0f;
 CGFloat const kSFUserTableViewCellHeight = 80.0f;
 CGFloat const kSFUserTableViewCellNameLabelHeight = 25.0f;
 CGFloat const kSFUserTableViewCellDateLabelHeight = 15.0f;
+CGFloat const kSFUserTableViewCellProfileImageBorderWidth = 0.5f;
 
 @interface SFUserTableViewCell ()
 
@@ -44,9 +45,9 @@ CGFloat const kSFUserTableViewCellDateLabelHeight = 15.0f;
         _userImageViewBackground = [[UIView alloc] initWithFrame:[self userImageViewBackgroundRect]];
         _userImageViewBackground.layer.cornerRadius = ceil([self userImageViewBackgroundRect].size.width * 0.5);
         _userImageViewBackground.layer.masksToBounds = YES;
-        _userImageViewBackground.backgroundColor = [UIColor whiteColor];
-        _userImageViewBackground.layer.borderColor = [UIColor lightGrayColor].CGColor;
-        _userImageViewBackground.layer.borderWidth = 0.5f;
+        _userImageViewBackground.backgroundColor = [UIColor clearColor];
+        _userImageViewBackground.layer.borderColor = kSFColorUserCellProfileImageStrokeColor.CGColor;
+        _userImageViewBackground.layer.borderWidth = kSFUserTableViewCellProfileImageBorderWidth;
         [self addSubview:_userImageViewBackground];
         
         _userImageView = [[UIImageView alloc] initWithFrame:[self userImageViewRect]];
@@ -57,14 +58,14 @@ CGFloat const kSFUserTableViewCellDateLabelHeight = 15.0f;
         _nameLabel = [[UILabel alloc] init];
         _nameLabel.backgroundColor = [UIColor clearColor];
         _nameLabel.numberOfLines = 1;
-        _nameLabel.font = [UIFont boldSystemFontOfSize:16.0];
+        _nameLabel.font = kSFFontUserTableCellName;
         _nameLabel.adjustsFontSizeToFitWidth = YES;
         [self addSubview:_nameLabel];
         
         _dateLabel = [[UILabel alloc] init];
         _dateLabel.backgroundColor = [UIColor clearColor];
         _dateLabel.numberOfLines = 1;
-        _dateLabel.font = [UIFont italicSystemFontOfSize:12.0];
+        _dateLabel.font = kSFFontUserTableCellDate;
         _dateLabel.adjustsFontSizeToFitWidth = YES;
         [self addSubview:_dateLabel];
         

@@ -26,3 +26,7 @@
 #define kSFColorChartHeaderTextColor UIColorFromHex(0x222222)
 #define kSFColorChartHeaderUnderlineColor UIColorFromHex(0x222222)
 
+#pragma mark - Cells
+
+#define kSFColorUserCellProfileImageStrokeColor UIColorFromHex(0x898989)
+

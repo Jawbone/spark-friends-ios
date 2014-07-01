@@ -33,6 +33,7 @@ NSString * const kSFMainViewControllerCellIdentifier = @"kSFMainViewControllerCe
 // Numerics
 CGFloat static const kSFMainViewControllerLineChartLineWidth = 1.0f;
 CGFloat static const kSFMainViewControllerSeparatorPadding = 10.0f;
+NSUInteger static const kSFMainViewControllerChartLineCount = 1;
 
 @interface SFMainViewController () <SFLineChartViewDataSource, JBLineChartViewDelegate>
 
@@ -146,7 +147,7 @@ CGFloat static const kSFMainViewControllerSeparatorPadding = 10.0f;
 
 - (NSUInteger)numberOfLinesInLineChartView:(JBLineChartView *)lineChartView;
 {
-    return 1;
+    return kSFMainViewControllerChartLineCount;
 }
 
 - (NSUInteger)lineChartView:(JBLineChartView *)lineChartView numberOfVerticalValuesAtLineIndex:(NSUInteger)lineIndex

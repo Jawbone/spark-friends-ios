@@ -26,7 +26,7 @@
         _titleLabel = [[UILabel alloc] init];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
         _titleLabel.backgroundColor = [UIColor clearColor];
-        _titleLabel.font = kGAFontHeaderView;
+        _titleLabel.font = kSFFontHeaderViewTitle;
         _titleLabel.textColor = kSFColorChartHeaderTextColor;
         [self addSubview:_titleLabel];
         

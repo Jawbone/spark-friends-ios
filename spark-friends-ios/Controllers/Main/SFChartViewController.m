@@ -23,6 +23,8 @@ CGFloat static const kSFChartViewContainerPadding = 20.0f;
 CGFloat static const kSFChartViewContainerHeaderHeight = 40.0f;
 CGFloat static const kSFChartViewContainerFooterHeight = 30.0f;
 CGFloat static const kSFChartViewContainerLineChartLineWidth = 3.0f;
+NSUInteger static const kSFChartViewControllerFooterSectionCount = 2;
+NSUInteger static const kSFChartViewControllerChartLineCount = 1;
 
 @interface SFChartViewContainer : UIView
 
@@ -72,11 +74,11 @@ CGFloat static const kSFChartViewContainerLineChartLineWidth = 3.0f;
     self.chartContainer.lineChartView.minimumValue = [[SFDataModel sharedInstance] minimumStepValue];
     
     SFChartHeaderView *headerView = [[SFChartHeaderView alloc] initWithFrame:CGRectMake(self.view.bounds.origin.x, self.view.bounds.origin.y, self.view.bounds.size.width, kSFChartViewContainerHeaderHeight)];
-    headerView.titleLabel.text = @"Annual Step Data";
+    headerView.titleLabel.text = kSFStringLabelAnnualStepData;
     self.chartContainer.lineChartView.headerView = headerView;
 
     SFChartFooterView *footerView = [[SFChartFooterView alloc] initWithFrame:CGRectMake(self.view.bounds.origin.x, self.view.bounds.origin.y, self.view.bounds.size.width, kSFChartViewContainerFooterHeight)];
-    footerView.sectionCount = 2;
+    footerView.sectionCount = kSFChartViewControllerFooterSectionCount;
     footerView.leftLabel.text = [kSFStringLabelJan uppercaseString];
     footerView.rightLabel.text = [kSFStringLabelDec uppercaseString];
     footerView.centerLabel.text = kSFStringLabel2013;
@@ -96,7 +98,7 @@ CGFloat static const kSFChartViewContainerLineChartLineWidth = 3.0f;
 
 - (NSUInteger)numberOfLinesInLineChartView:(JBLineChartView *)lineChartView;
 {
-    return 1;
+    return kSFChartViewControllerChartLineCount;
 }
 
 - (NSUInteger)lineChartView:(JBLineChartView *)lineChartView numberOfVerticalValuesAtLineIndex:(NSUInteger)lineIndex
@@ -154,7 +156,6 @@ CGFloat static const kSFChartViewContainerLineChartLineWidth = 3.0f;
         _lineChartView.backgroundColor = kSFColorBaseBackgroundColor;
         _lineChartView.showsLineSelection = NO;
         _lineChartView.showsVerticalSelection = NO;
-        
         [self addSubview:_lineChartView];
     }
     return self;
