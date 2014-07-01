@@ -11,7 +11,7 @@ Demo project showcasing the use of <a href="https://github.com/Jawbone/JBChartVi
 - Sparkline table cell support in both landscape and portrait mode.
 - Detail view for enlarging sparkline to a full resolution chart.  
 
-Refer to the <a href="https://github.com/Jawbone/anscombe-quartet-ios/blob/master/CHANGELOG.md"">changelog</a> for an overview of the project's complete history.
+Refer to the <a href="https://github.com/Jawbone/aspark-friends-ios/blob/master/CHANGELOG.md"">changelog</a> for an overview of the project's complete history.
 
 ## Requirements
 
