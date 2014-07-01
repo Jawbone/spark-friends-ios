@@ -16,4 +16,10 @@
 + (SFDataModel *)sharedInstance;
 - (SFUser *)currentUser;
 
+// Metrics
+- (CGFloat)minimumAverageStepValue;
+- (CGFloat)maximumAverageStepValue;
+- (CGFloat)maximumStepValue;
+- (CGFloat)minimumStepValue;
+
 @end

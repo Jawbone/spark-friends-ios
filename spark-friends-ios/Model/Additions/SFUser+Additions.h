@@ -13,10 +13,4 @@
 - (NSString *)fullName;
 - (NSArray *)friends;
 
-// Ranges across all friend's steps
-- (CGFloat)maximumStepValue;
-- (CGFloat)minimumStepValue;
-- (CGFloat)averageStepValue;
-- (CGFloat)stepRange;
-
 @end

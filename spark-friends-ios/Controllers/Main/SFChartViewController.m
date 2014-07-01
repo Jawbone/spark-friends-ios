@@ -9,6 +9,7 @@
 #import "SFChartViewController.h"
 
 // Models
+#import "SFDataModel.h"
 #import "SFUser+Additions.h"
 #import "SFStep.h"
 
@@ -67,8 +68,8 @@ CGFloat static const kSFChartViewContainerLineChartLineWidth = 3.0f;
     self.chartContainer.lineChartView.delegate = self;
     self.chartContainer.lineChartView.dataSource = self;
 
-    self.chartContainer.lineChartView.maximumValue = [self.user maximumStepValue];
-    self.chartContainer.lineChartView.minimumValue = [self.user minimumStepValue];
+    self.chartContainer.lineChartView.maximumValue = [[SFDataModel sharedInstance] maximumStepValue];
+    self.chartContainer.lineChartView.minimumValue = [[SFDataModel sharedInstance] minimumStepValue];
     
     SFChartHeaderView *headerView = [[SFChartHeaderView alloc] initWithFrame:CGRectMake(self.view.bounds.origin.x, self.view.bounds.origin.y, self.view.bounds.size.width, kSFChartViewContainerHeaderHeight)];
     headerView.titleLabel.text = @"Annual Step Data";
@@ -115,12 +116,12 @@ CGFloat static const kSFChartViewContainerLineChartLineWidth = 3.0f;
 
 - (NSUInteger)minimumAverageInLineChartView:(JBLineChartView *)lineChartView
 {
-    return [self.user averageStepValue] - ceil([self.user averageStepValue] * 0.3);
+    return [[SFDataModel sharedInstance] minimumAverageStepValue];
 }
 
 - (NSUInteger)maximumAverageInLineChartView:(JBLineChartView *)lineChartView
 {
-    return [self.user averageStepValue] + ceil([self.user averageStepValue] * 0.3);
+    return [[SFDataModel sharedInstance] maximumAverageStepValue];
 }
 
 #pragma mark - JBLineChartViewDelegate

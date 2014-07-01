@@ -96,6 +96,8 @@ CGFloat static const kSFMainViewControllerSeparatorPadding = 10.0f;
     cell.lineChartView.user = user;
     cell.lineChartView.delegate = self;
     cell.lineChartView.dataSource = self;
+    cell.lineChartView.maximumValue = [[SFDataModel sharedInstance] maximumStepValue];
+    cell.lineChartView.minimumValue = [[SFDataModel sharedInstance] minimumStepValue];
     
     [cell.lineChartView reloadData];
     return cell;
@@ -170,8 +172,7 @@ CGFloat static const kSFMainViewControllerSeparatorPadding = 10.0f;
 {
     if ([lineChartView isKindOfClass:[SFLineChartView class]])
     {
-        SFUser *user = ((SFLineChartView *)lineChartView).user;
-        return [user averageStepValue] - ceil([user averageStepValue] * 0.3);
+        return [[SFDataModel sharedInstance] minimumAverageStepValue];
     }
     return 0;
 }
@@ -180,8 +181,7 @@ CGFloat static const kSFMainViewControllerSeparatorPadding = 10.0f;
 {
     if ([lineChartView isKindOfClass:[SFLineChartView class]])
     {
-        SFUser *user = ((SFLineChartView *)lineChartView).user;
-        return [user averageStepValue] + ceil([user averageStepValue] * 0.3);
+        return [[SFDataModel sharedInstance] maximumAverageStepValue];
     }
     return 0;
 }

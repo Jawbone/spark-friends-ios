@@ -32,6 +32,7 @@ NSUInteger static const kSFDataModelMonthsInYear = 12;
 NSUInteger static const kSFDataModelDaysInYear = 365;
 NSUInteger static const kSFDataModelMaxStep = 15000;
 NSUInteger static const kSFDataModelMinStep = 3000;
+CGFloat static const kSFDataModelAverageRangeMultiplier = 0.3f;
 
 @interface SFDataModel ()
 
@@ -43,6 +44,9 @@ NSUInteger static const kSFDataModelMinStep = 3000;
 
 // Users helpers
 - (SFUser *)generateMockUserType:(SFDataModelMockUserType)userType;
+
+// Rangers
+- (CGFloat)averageStepValue;
 
 @end
 
@@ -177,6 +181,65 @@ NSUInteger static const kSFDataModelMinStep = 3000;
     }
     
     return mockUser;
+}
+
+#pragma mark - Metrics
+
+- (CGFloat)maximumStepValue
+{
+    NSUInteger currentMaxStepValue = 0;
+    for (SFUser *user in [self users])
+    {
+        for (SFStep *step in user.steps)
+        {
+            if (step.value > currentMaxStepValue)
+            {
+                currentMaxStepValue = step.value;
+            }
+        }
+    }
+    return currentMaxStepValue;
+}
+
+- (CGFloat)minimumAverageStepValue
+{
+    return [self averageStepValue] - ceil([self averageStepValue] * kSFDataModelAverageRangeMultiplier);
+}
+
+- (CGFloat)maximumAverageStepValue
+{
+    return [self averageStepValue] + ceil([self averageStepValue] * kSFDataModelAverageRangeMultiplier);
+}
+
+- (CGFloat)minimumStepValue
+{
+    NSUInteger currentMinStepValue = INT_MAX;
+    for (SFUser *user in [self users])
+    {
+        for (SFStep *step in user.steps)
+        {
+            if (step.value < currentMinStepValue)
+            {
+                currentMinStepValue = step.value;
+            }
+        }
+    }
+    return currentMinStepValue;
+}
+
+- (CGFloat)averageStepValue
+{
+    NSUInteger totalStepValue = 0;
+    NSUInteger totalStepCount = 0;
+    for (SFUser *user in [self users])
+    {
+        for (SFStep *step in user.steps)
+        {
+            totalStepValue += step.value;
+            totalStepCount++;
+        }
+    }
+    return (CGFloat)totalStepValue / (CGFloat)totalStepCount;
 }
 
 @end
