@@ -26,12 +26,12 @@
         _titleLabel = [[UILabel alloc] init];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
         _titleLabel.backgroundColor = [UIColor clearColor];
-        _titleLabel.font = [UIFont systemFontOfSize:18.0];
-        _titleLabel.textColor = [UIColor blackColor];
+        _titleLabel.font = kGAFontHeaderView;
+        _titleLabel.textColor = kSFColorChartHeaderTextColor;
         [self addSubview:_titleLabel];
         
         _underlineView = [[UIView alloc] init];
-        _underlineView.backgroundColor = [UIColor blackColor];
+        _underlineView.backgroundColor = kSFColorChartHeaderUnderlineColor;
         [self addSubview:_underlineView];
     }
     return self;

@@ -6,4 +6,5 @@
 //  Copyright (c) 2014 Jawbone. All rights reserved.
 //
 
+#define kGAFontHeaderView [UIFont systemFontOfSize:18.0]
 #define kGAFontFooterView [UIFont boldSystemFontOfSize:10]
