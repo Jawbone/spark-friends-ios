@@ -1,7 +1,7 @@
 # Spark Friends
 <br/>
 <p align="center">	
-	<img src="https://raw.githubusercontent.com/Jawbone/anscombe-quartet-ios/master/Screenshots/main.jpg">
+	<img src="https://raw.githubusercontent.com/Jawbone/spark-friends-ios/master/Screenshots/main.jpg">
 </p>
 
 Demo project showcasing the use of <a href="https://github.com/Jawbone/JBChartView" targer="_blank">JBChartView</a> in the context of <a href="http://en.wikipedia.org/wiki/Sparkline" target="_blank">sparklines</a> (via fake user step data).
