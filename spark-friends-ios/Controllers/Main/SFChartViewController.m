@@ -29,6 +29,8 @@ NSUInteger static const kSFChartViewControllerChartLineCount = 1;
 @interface SFChartViewContainer : UIView
 
 @property (nonatomic, strong) SFLineChartView *lineChartView;
+@property (nonatomic, strong) UIView *headerView;
+@property (nonatomic, strong) UIView *footerView;
 
 @end
 
@@ -75,15 +77,19 @@ NSUInteger static const kSFChartViewControllerChartLineCount = 1;
     
     SFChartHeaderView *headerView = [[SFChartHeaderView alloc] initWithFrame:CGRectMake(self.view.bounds.origin.x, self.view.bounds.origin.y, self.view.bounds.size.width, kSFChartViewContainerHeaderHeight)];
     headerView.titleLabel.text = kSFStringLabelAnnualStepData;
-    self.chartContainer.lineChartView.headerView = headerView;
+    self.chartContainer.headerView = headerView;
 
     SFChartFooterView *footerView = [[SFChartFooterView alloc] initWithFrame:CGRectMake(self.view.bounds.origin.x, self.view.bounds.origin.y, self.view.bounds.size.width, kSFChartViewContainerFooterHeight)];
     footerView.sectionCount = kSFChartViewControllerFooterSectionCount;
     footerView.leftLabel.text = [kSFStringLabelJan uppercaseString];
     footerView.rightLabel.text = [kSFStringLabelDec uppercaseString];
     footerView.centerLabel.text = kSFStringLabel2013;
-    self.chartContainer.lineChartView.footerView = footerView;
-    
+    self.chartContainer.footerView = footerView;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     [self.chartContainer.lineChartView reloadData];
 }
 
@@ -161,13 +167,49 @@ NSUInteger static const kSFChartViewControllerChartLineCount = 1;
     return self;
 }
 
+#pragma mark - Setters
+
+- (void)setHeaderView:(UIView *)headerView
+{
+    if (_headerView != nil)
+    {
+        [_headerView removeFromSuperview];
+        _headerView = nil;
+    }
+    
+    _headerView = headerView;
+    [self addSubview:_headerView];
+    [self setNeedsLayout];
+}
+
+- (void)setFooterView:(UIView *)footerView
+{
+    if (_footerView != nil)
+    {
+        [_footerView removeFromSuperview];
+        _footerView = nil;
+    }
+    
+    _footerView = footerView;
+    [self addSubview:_footerView];
+    [self setNeedsLayout];
+}
+
 #pragma mark - Layout
 
 - (void)layoutSubviews
 {
     [super layoutSubviews];
     
-    self.lineChartView.frame = CGRectMake(kSFChartViewContainerPadding, kSFChartViewContainerPadding, self.bounds.size.width - (kSFChartViewContainerPadding * 2), self.bounds.size.height - (kSFChartViewContainerPadding * 2));
+    CGFloat yOffset = kSFChartViewContainerPadding;
+    CGFloat xOffset = kSFChartViewContainerPadding;
+    
+    self.headerView.frame = CGRectMake(xOffset, yOffset, self.bounds.size.width - (kSFChartViewContainerPadding * 2), self.headerView.frame.size.height);
+    yOffset += self.headerView.frame.size.height;
+    self.lineChartView.frame = CGRectMake(xOffset, yOffset, self.bounds.size.width - (kSFChartViewContainerPadding * 2), self.bounds.size.height - self.headerView.frame.size.height - self.footerView.frame.size.height - (kSFChartViewContainerPadding * 2));
+    yOffset += self.lineChartView.frame.size.height;
+    self.footerView.frame = CGRectMake(xOffset, yOffset, self.bounds.size.width - (kSFChartViewContainerPadding * 2), self.footerView.frame.size.height);
+    
     [self.lineChartView reloadData];
 }
 
