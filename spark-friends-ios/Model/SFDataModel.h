@@ -21,5 +21,6 @@
 - (CGFloat)maximumAverageStepValue;
 - (CGFloat)maximumStepValue;
 - (CGFloat)minimumStepValue;
+- (CGFloat)averageStepValue;
 
 @end

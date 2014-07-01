@@ -8,6 +8,8 @@
 
 #import "SFLineChartView.h"
 
+#import "SFDataModel.h"
+
 @interface SFLineChartView ()
 
 @property (nonatomic, strong) UIView *averageRangeView;
@@ -51,14 +53,16 @@
     {
         minimumAverage = [self.dataSource minimumAverageInLineChartView:self];
     }
-    CGFloat yOffsetBottom = (((CGFloat)minimumAverage) / self.maximumValue) * [self availableHeight];
-
+    CGFloat yOffsetTop = (((CGFloat)minimumAverage) / self.maximumValue) * [self availableHeight];
+    
     NSUInteger maximumAverage = 0;
     if ([self.dataSource respondsToSelector:@selector(maximumAverageInLineChartView:)])
     {
         maximumAverage = [self.dataSource maximumAverageInLineChartView:self];
     }
-    CGFloat yOffsetTop = (1 - (((CGFloat)maximumAverage) / self.maximumValue)) * [self availableHeight];
+    CGFloat yOffsetBottom = (((CGFloat)maximumAverage) / self.maximumValue) * [self availableHeight];
+    
+    NSLog(@"minimum %d maximum %d and average %f", minimumAverage, maximumAverage, [[SFDataModel sharedInstance] averageStepValue]);
     
     self.averageRangeView.frame = CGRectMake(0, yOffsetTop, self.bounds.size.width, self.bounds.size.height - yOffsetTop - yOffsetBottom);
 }
