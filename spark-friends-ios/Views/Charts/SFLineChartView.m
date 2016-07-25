@@ -48,6 +48,11 @@
 {
     [super layoutSubviews];
     
+    if (self.dataSource == nil || self.delegate == nil)
+    {
+        return;
+    }    
+    
     NSUInteger minimumAverage = 0;
     if ([self.dataSource respondsToSelector:@selector(minimumAverageInLineChartView:)])
     {

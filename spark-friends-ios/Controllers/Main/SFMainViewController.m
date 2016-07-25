@@ -100,6 +100,8 @@ NSUInteger static const kSFMainViewControllerChartLineCount = 1;
     cell.lineChartView.maximumValue = [[SFDataModel sharedInstance] maximumStepValue];
     cell.lineChartView.minimumValue = [[SFDataModel sharedInstance] minimumStepValue];
     
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
     [cell.lineChartView reloadData];
     return cell;
 }
